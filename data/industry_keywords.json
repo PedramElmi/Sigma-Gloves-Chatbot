@@ -1,0 +1,735 @@
+[
+  {
+    "code": "metalwork",
+    "name_fa": "فلزکاری / ورق‌کاری / آهنگری",
+    "name_en": "Metalwork / Sheet Metal / Blacksmithing",
+    "keywords_fa": [
+      "جوشکاری","جوش","جوشکار","جوش قوسی","مِیگ","میگ","تیگ","TIG","MIG","ARC","CO2","جوشکاری نقطه‌ای",
+      "برشکاری","برش","برش لیزر","برش پلاسما","پلاسما","پرس","خمکاری","خم کن","خم‌کاری","ورق","ورق‌کاری",
+      "فرز","فرزکاری","سنگ فرز","سنگ‌زنی","تراش","تراشکاری","دریل","دریل ستاپ","مته","تیغه","لبه تیز",
+      "آهن","فولاد","استیل","فلز","بیلت","شمش","آهنگری","فورجینگ","نورد","پرس هیدرولیک","جوش CO2",
+      "ساخت قطعه","فابریکیشن","صفحات فلزی","قاب فلزی","درب و پنجره فلزی","تیغه برش","لبه برنده"
+    ],
+    "keywords_en": [
+      "welding","welder","arc welding","mig","tig","mig welding","tig welding","plasma cutting","laser cutting","cutting",
+      "sheet metal","bending","press","press brake","grinding","grinder","lathe","milling","mill","drill","drilling",
+      "steel","iron","metal","stainless","sheet","blade","sharp edge","blacksmith","forging","fabrication","metalwork",
+      "press brake","hydraulic press","spot welding"
+    ],
+    "samples_fa": [
+      "جوشکارم","با فرز کار می‌کنم","برش ورق انجام میدم","تراشکاری دارم","کار با تیغه و ورق دارم","اپراتور پرس هستم",
+      "در کارگاه فلزکاری کار می‌کنم","ساخت درب و پنجره فلزی انجام میدم"
+    ],
+    "samples_en": [
+      "I do welding","I work with grinders","I cut metal sheets","lathe operator","I handle sharp blades","press operator",
+      "metal fabrication","I make metal doors and windows"
+    ]
+  },
+
+  {
+    "code": "welding_specialist",
+    "name_fa": "جوشکاری تخصصی",
+    "name_en": "Welding Specialist",
+    "keywords_fa": [
+      "جوشکاری تخصصی","MIG","TIG","MIG welding","TIG welding","جوش آرک","arc","جوشکاری زیرپودری","سرباره جوش","اسپارک",
+      "فیوم جوش","دمای جوش","فلاکس","الکترود","هِلدر"
+    ],
+    "keywords_en": [
+      "mig","tig","arc welding","submerged arc","welding fumes","welding specialist","butt weld","welding torch",
+      "weld bead","weld spatter","welder"
+    ],
+    "samples_fa": ["جوش MIG انجام میدم","تخصصم TIG هست","جوشکاری صنعتی انجام میدم"],
+    "samples_en": ["I do MIG welding","I specialize in TIG","industrial welder"]
+  },
+
+  {
+    "code": "construction",
+    "name_fa": "ساختمانی / ساخت‌وساز",
+    "name_en": "Construction / Building",
+    "keywords_fa": [
+      "بتن","آجر","سیمان","مغاری","داربست","میلگرد","تیرآهن","سنگ‌کاری","کاشی","سرامیک","چکش","ملات","قالب بندی",
+      "بتن ریزی","ریختن بتن","جرثقیل","کف‌سازی","کناف‌کاری","نقشه‌خوانی","اجرچینی","آرماتور","راپتور","نردبان","اره برقی",
+      "جی‌سی‌ها","برش آجر","بلوک سفال","سوله‌سازی","سقف ساز"
+    ],
+    "keywords_en": [
+      "concrete","brick","masonry","scaffolding","rebar","hammer","tile","tiler","concrete pouring","formwork","construction worker",
+      "site","building","masonry tools","scaffold","crane","flooring","roofing","bricklayer","blockwork","excavator"
+    ],
+    "samples_fa": [
+      "کارگر ساختمونم","در ساخت و ساز کار می‌کنم","کاشی‌کار","بتن ریزی انجام میدم","میلگرد می‌بندم","آجرچینم"
+    ],
+    "samples_en": [
+      "I'm a construction worker","I do masonry","tiler","I pour concrete","I tie rebar","bricklayer"
+    ]
+  },
+
+  {
+    "code": "carpentry",
+    "name_fa": "نجاری / کار با چوب",
+    "name_en": "Carpentry / Woodworking",
+    "keywords_fa": [
+      "نجاری","اره","اره نواری","اره رومیزی","سنباده","سوراخکاری","روتاری","پیچ","میخ","چسب چوب","انواع چوب","میزسازی",
+      "کابینت سازی","فنش","پولیش","لاک","رزین","سمباده‌زن","قلم‌زنی چوب","رویه کاری"
+    ],
+    "keywords_en": [
+      "carpentry","woodworking","saw","table saw","bandsaw","router","sander","nails","sanding","wood","furniture making",
+      "cabinet","joinery","wood frame"
+    ],
+    "samples_fa": ["نجارم","با اره و سنباده کار می‌کنم","کابینت می‌سازم","مبلمان تولید میکنم"],
+    "samples_en": ["I'm a carpenter","I use saws and sanders","I make cabinets","furniture maker"]
+  },
+
+  {
+    "code": "automotive",
+    "name_fa": "خودرو / مکانیک / گاراژ",
+    "name_en": "Automotive / Mechanical / Garage",
+    "keywords_fa": [
+      "مکانیک","تعویض روغن","تعمیر موتور","گیربکس","ترمز","بالانس","تعمیرات موتور","گریس","روغن موتور","آچار بکس",
+      "جک خودرو","بالانس چرخ","تودوزی","تعویض لاستیک","باطری","شارژ باتری"
+    ],
+    "keywords_en": [
+      "mechanic","oil change","engine repair","gearbox","brake","garage","auto repair","hand tools","grease","battery","jack",
+      "wheel balancing","tire change","auto technician"
+    ],
+    "samples_fa": ["مکانیک هستم","تعویض روغن انجام میدم","در گاراژ کار می‌کنم"],
+    "samples_en": ["I am a mechanic","I change oil","garage worker"]
+  },
+
+  {
+    "code": "warehouse",
+    "name_fa": "انبار / لجستیک / حمل و نقل داخلی",
+    "name_en": "Warehouse / Logistics / Material Handling",
+    "keywords_fa": [
+      "انبار","پالت","لیفتراک","بارگیری","تخلیه","بسته بندی","جعبه","کارتن","پالت‌بند","بارنامه","پیک","تحویل","جک پالت",
+      "هندلیفت","پالت تراک","بارچین"
+    ],
+    "keywords_en": [
+      "warehouse","pallet","forklift","loading","unloading","packing","carton","logistics","handling","packing boxes","warehouse worker",
+      "material handling","picker","packer"
+    ],
+    "samples_fa": ["در انبار کار می‌کنم","راننده لیفتراک هستم","بسته بندی انجام میدم","تخلیه کامیون انجام میدم"],
+    "samples_en": ["I work in a warehouse","forklift operator","I pack boxes","I load trucks"]
+  },
+
+  {
+    "code": "oil_gas",
+    "name_fa": "نفت و گاز / پتروشیمی / پالایش",
+    "name_en": "Oil & Gas / Petrochemical / Refinery",
+    "keywords_fa": [
+      "نفت","گاز","پالایشگاه","پتروشیمی","حفاری","خط لوله","هیدروکربن","حلال","نشت نفت","گریس","کرکره فشار قوی",
+      "پمپ ارسالی","بشکه","تصفیه","فلنج","اتصالات فشارقوی","تیوبینگ"
+    ],
+    "keywords_en": [
+      "oil","gas","refinery","petrochemical","drilling","pipeline","hydrocarbon","solvent","oilfield","grease","pump",
+      "flange","tubing","wellhead"
+    ],
+    "samples_fa": ["در پالایشگاه کار می‌کنم","حفاری انجام میدم","با حلال و روغن سروکار دارم","اپراتور پمپ هستم"],
+    "samples_en": ["I work at a refinery","drilling operator","I handle solvents","pump operator"]
+  },
+
+  {
+    "code": "chemical",
+    "name_fa": "شیمیایی / پردازش مواد شیمیایی",
+    "name_en": "Chemical Processing / Chemical Handling",
+    "keywords_fa": [
+      "اسید","باز","حلال","خورنده","مواد شیمیایی","پاشش شیمیایی","واکنش","pH","بخار","گاز سمی","مواد خطرناک","بشکه",
+      "استریلیزاسیون","خنثی‌سازی","احتراق شیمیایی","نشت مواد"
+    ],
+    "keywords_en": [
+      "acid","base","solvent","chemical","corrosive","toxic","chemical handling","spill","fumes","hazardous","barrel","neutralization"
+    ],
+    "samples_fa": ["در کارگاه شیمیایی کار می‌کنم","با اسید کار می‌کنم","مواد خورنده استفاده می‌کنم","اپراتور خط شیمیایی هستم"],
+    "samples_en": ["I work in chemical plant","I handle acids","chemical operator","I deal with corrosives"]
+  },
+
+  {
+    "code": "laboratory",
+    "name_fa": "آزمایشگاه / تحقیقاتی / پزشکی",
+    "name_en": "Laboratory / Research / Medical Lab",
+    "keywords_fa": [
+      "آزمایشگاه","نمونه","پتری دیش","پیپت","پیپت من","پروسس آزمایش","PCR","ELISA","فرمالین","بایوسِفِتی","استریل","کشت باکتری",
+      "نمونه برداری","کلینیکی","دستگاه سانتریفیوژ","سرنگ","آنالیز"
+    ],
+    "keywords_en": [
+      "lab","laboratory","sample","pipette","culture","formalin","sterile","test kit","clinical","PCR","ELISA","centrifuge",
+      "lab tech","sampling"
+    ],
+    "samples_fa": ["تکنسین آزمایشگاه هستم","نمونه‌برداری انجام میدم","آزمایشات بالینی دارم","کار با سانتریفیوژ دارم"],
+    "samples_en": ["I'm a lab technician","I do sampling","clinical lab work","I use centrifuge"]
+  },
+
+  {
+    "code": "healthcare",
+    "name_fa": "سلامت / بیمارستان / مراقبت",
+    "name_en": "Healthcare / Hospital / Caregiving",
+    "keywords_fa": [
+      "پرستار","بیمارستان","تزریق","سرنگ","پنبه، گاز استریل","اتاق عمل","خونگیری","دارو","بیهوشی","فلومتر","ویزیت"
+    ],
+    "keywords_en": [
+      "nurse","hospital","injection","needle","sterile","operating room","blood draw","medication","anesthesia"
+    ],
+    "samples_fa": ["پرستارم","در بیمارستان کار می‌کنم","با سرنگ سروکار دارم","مسئول نمونه برداری هستم"],
+    "samples_en": ["I'm a nurse","hospital worker","I handle needles","phlebotomist"]
+  },
+
+  {
+    "code": "food",
+    "name_fa": "صنایع غذایی / بسته‌بندی / کشتارگاه",
+    "name_en": "Food Processing / Food Handling / Slaughterhouse",
+    "keywords_fa": [
+      "غذا","بسته بندی","فریز","سردخانه","کشتارگاه","برش گوشت","ضدعفونی","پاستوریزه","لبنیات","خط تولید","حسگر دما","بهداشت مواد غذایی"
+    ],
+    "keywords_en": [
+      "food processing","packing","cold storage","meat cutting","slaughterhouse","food hygiene","meat cutter","dairy","pasteurization"
+    ],
+    "samples_fa": ["در کارخانه غذا کار می‌کنم","گوشت برش میدم","کارتن‌بندی غذا انجام میدم","کار در سردخانه دارم"],
+    "samples_en": ["I work in food factory","meat cutter","I pack food","I work in cold storage"]
+  },
+
+  {
+    "code": "textile",
+    "name_fa": "نساجی / تولید پارچه / دوخت",
+    "name_en": "Textile / Fabric Production / Sewing",
+    "keywords_fa": [
+      "نساجی","بافندگی","الیاف","دوخت","برش پارچه","ماشین دوخت صنعتی","نخ","مراحل رنگ","رنگرزی","تاروپودی","برشگر پارچه"
+    ],
+    "keywords_en": [
+      "textile","weaving","sewing","fabric cutting","garment","industrial sewing machine","dyeing","textile mill"
+    ],
+    "samples_fa": ["در کارخانه نساجی کار می‌کنم","برش پارچه دارم","دوخت انجام میدم","چرخ صنعتی دارم"],
+    "samples_en": ["I work in textile factory","fabric cutter","seamstress","I sew garments"]
+  },
+
+  {
+    "code": "electronics",
+    "name_fa": "الکترونیک / مونتاژ برد / تعمیرات",
+    "name_en": "Electronics / PCB Assembly / Electronic Repair",
+    "keywords_fa": [
+      "برد","SMD","هویه","جای‌گذاری قطعات","مونتاژ برد","آی‌سی","فیوز","الکترونیک","روغن رسانا","ESD","حساسیت الکترومغناطیسی"
+    ],
+    "keywords_en": [
+      "electronics","pcb","smd","soldering","solder","soldering iron","circuit board","electronics repair","esd"
+    ],
+    "samples_fa": ["در مونتاژ برد کار می‌کنم","هویه می‌زنم","سولدرینگ انجام میدم"],
+    "samples_en": ["I do PCB assembly","I solder components","electronics repairman"]
+  },
+
+  {
+    "code": "semiconductor",
+    "name_fa": "نیمه‌هادی / فاب",
+    "name_en": "Semiconductor / Chip Fabrication",
+    "keywords_fa": [
+      "cleanroom","وِیفر","فتولیتوگرافی","ESD","آنتی‌استاتیک","سیلیکون","وافر","نانو","دستگاه اسنترپ"
+    ],
+    "keywords_en": [
+      "semiconductor","cleanroom","wafer","photolithography","esd","anti static","chip fab","semiconductor manufacturing"
+    ],
+    "samples_fa": ["در فاب کار می‌کنم","اپراتور cleanroom هستم","کاری مرتبط با wafer دارم"],
+    "samples_en": ["I work in chip fab","cleanroom operator","wafer processing"]
+  },
+
+  {
+    "code": "pharmaceutical",
+    "name_fa": "داروسازی / تولید دارو",
+    "name_en": "Pharmaceutical / Drug Manufacturing",
+    "keywords_fa": [
+      "فرمولاسیون","قرص","کپسول","sterile filling","آمپول","کپسول‌پرکن","بسته‌بندی دارو","کالیبراسیون خط",
+      "تحلیل کیفیت","قالب دارو","کنترل کیفی"
+    ],
+    "keywords_en": [
+      "pharmaceutical","tablet","capsule","sterile filling","injection vial","drug production","pharma","quality control"
+    ],
+    "samples_fa": ["در کارخانه دارو کار می‌کنم","خط تولید قرص دارم","بسته‌بندی ampoule انجام میدم"],
+    "samples_en": ["I work in pharma","tablet production","sterile filling operator"]
+  },
+
+  {
+    "code": "agriculture",
+    "name_fa": "کشاورزی / مزرعه / باغبانی",
+    "name_en": "Agriculture / Farming / Gardening",
+    "keywords_fa": [
+      "کشاورزی","بیل","داس","تراکتور","شخم","هرس","محصول","سم‌پاش","بذرپاشی","گلخانه","کودپاشی","میوه‌چینی","انبار محصول"
+    ],
+    "keywords_en": [
+      "farming","tractor","harvest","pesticide","sickle","hoe","greenhouse","crop","harvester"
+    ],
+    "samples_fa": ["باغبانم","در مزرعه کار می‌کنم","سم‌پاشی انجام میدم","دروگر هستم"],
+    "samples_en": ["I'm a farmer","I spray pesticides","I harvest crops","greenhouse worker"]
+  },
+
+  {
+    "code": "gardening",
+    "name_fa": "باغبانی شهری / نگهداری فضای سبز",
+    "name_en": "Gardening / Landscaping / Groundskeeping",
+    "keywords_fa": [
+      "هرس","چمن زنی","چمن زن","کاشت گل","درخت کاری","قیچی هرس","کشیدن برگ","آبیاری","طبیعت شهری"
+    ],
+    "keywords_en": [
+      "landscaping","gardening","pruning","lawnmower","planting","groundskeeping"
+    ],
+    "samples_fa": ["باغبان فضای سبزم","هرس و چمن‌زنی انجام میدم","نگهداری پارک انجام میدم"],
+    "samples_en": ["I do landscaping","pruner","groundskeeper"]
+  },
+
+  {
+    "code": "glass",
+    "name_fa": "شیشه‌سازی / شیشه‌بُری / کار با شیشه",
+    "name_en": "Glasswork / Glazier / Glass Cutting",
+    "keywords_fa": [
+      "شیشه","برش شیشه","لبه تیز","شیشه سکوریت","شیشه‌ریز","شیشه بری","چسب شیشه","شیشه دوجداره"
+    ],
+    "keywords_en": [
+      "glass","glazier","glass cutting","shards","sharp edge","glasswork","safety glass"
+    ],
+    "samples_fa": ["شیشه‌گرم","برش شیشه انجام میدم","کار با شیشه دارم"],
+    "samples_en": ["I cut glass","glazier","glassworker"]
+  },
+
+  {
+    "code": "foundry",
+    "name_fa": "ریخته‌گری / ذوب / کار با مواد مذاب",
+    "name_en": "Foundry / Casting / Molten Metal",
+    "keywords_fa": [
+      "ریخته‌گری","ذوب فلز","قالب","فلز مذاب","دمای بالا","پوریگ","ریخته‌گری ماسه‌ای","ریخته‌گری فشار"
+    ],
+    "keywords_en": [
+      "foundry","casting","molten metal","high temperature","pouring","mold","casting mold"
+    ],
+    "samples_fa": ["در ریخته‌گری کار می‌کنم","با فلز مذاب سروکار دارم","پوریگ انجام میدم"],
+    "samples_en": ["I work in a foundry","molten metal handling","casting operator"]
+  },
+
+  {
+    "code": "painting",
+    "name_fa": "نقاشی صنعتی / اسپری / پوشش‌دهی",
+    "name_en": "Industrial Painting / Spray / Coating",
+    "keywords_fa": [
+      "رنگ","اسپری","پاشش رنگ","coat","حلال","پاشش","paint booth","کوره پخت رنگ","روکش‌دهی","اپوکسی"
+    ],
+    "keywords_en": [
+      "painting","spray painting","coating","paint booth","spray","solvent","epoxy","powder coating"
+    ],
+    "samples_fa": ["نقاش صنعتی هستم","اسپری رنگ میزنم","با حلال سروکار دارم"],
+    "samples_en": ["I am a spray painter","industrial painter","I handle solvents"]
+  },
+
+  {
+    "code": "printing",
+    "name_fa": "چاپ / لیتوگرافی / پس‌پردازش",
+    "name_en": "Printing / Lithography / Print Finishing",
+    "keywords_fa": [
+      "چاپ","افست","سیلک","چاپ دیجیتال","لمینت","کاتر","کوره یو وی","پست پروداکشن","برش چاپ"
+    ],
+    "keywords_en": [
+      "printing","offset","screen printing","digital print","lamination","cutter","uv curing","post processing"
+    ],
+    "samples_fa": ["در چاپخانه کار می‌کنم","لیتوگرافی انجام میدم","لمینت کارم"],
+    "samples_en": ["I work at a print shop","offset press operator","lamination operator"]
+  },
+
+  {
+    "code": "recycling",
+    "name_fa": "بازیافت / پسماند / تفکیک",
+    "name_en": "Recycling / Waste Management / Sorting",
+    "keywords_fa": [
+      "بازیافت","پسماند","زباله","تفکیک","شیشه شکسته","تیغه","اسقاط","فشرده‌سازی زباله","پرس زباله"
+    ],
+    "keywords_en": [
+      "recycling","waste","sorting","broken glass","sharps","compactor","scrap metal","waste handler"
+    ],
+    "samples_fa": ["در بازیافت کار می‌کنم","تفکیک پسماند انجام میدم","زباله گرد هستم"],
+    "samples_en": ["I work in recycling","waste handler","I sort waste"]
+  },
+
+  {
+    "code": "mining",
+    "name_fa": "معدن / استخراج / تونل‌سازی",
+    "name_en": "Mining / Extraction / Quarrying",
+    "keywords_fa": [
+      "معدن","حفاری","تونل","بیل مکانیکی","بارگیری معدن","چال انفجاری","سنگ","استخراج","راکفال","باربری معدن"
+    ],
+    "keywords_en": [
+      "mining","drilling","tunnel","quarry","excavation","ore","rockfall","blast","mining operator"
+    ],
+    "samples_fa": ["در معدن کار می‌کنم","حفاری انجام میدم","کار در تونل دارم"],
+    "samples_en": ["I work in mining","excavation operator","tunnel worker"]
+  },
+
+  {
+    "code": "railway",
+    "name_fa": "راه‌آهن / تعمیرات راه‌آهن",
+    "name_en": "Railway / Track Maintenance / Train Repair",
+    "keywords_fa": [
+      "ریل","واگن","لوکوموتیو","ریل‌گذاری","تعویض اسلب","ترمز ریل","قطعات ریلی","ریل مهره‌ای"
+    ],
+    "keywords_en": [
+      "railway","track","locomotive","wagon","rail maintenance","train repair"
+    ],
+    "samples_fa": ["در راه‌آهن کار می‌کنم","ریل‌گذاری انجام میدم"],
+    "samples_en": ["I work on railway","track maintenance"]
+  },
+
+  {
+    "code": "shipbuilding",
+    "name_fa": "کشتی‌سازی / دریایی / اسکله",
+    "name_en": "Shipbuilding / Marine / Dockyard",
+    "keywords_fa": [
+      "کشتی","عرشه","جوشکاری دریایی","ضدخوردگی","پاشش رنگ دریایی","آب‌بندی","نشت روغن","پلیمر دریایی"
+    ],
+    "keywords_en": [
+      "shipbuilding","marine","dockyard","marine welding","deck","coating","ship repair"
+    ],
+    "samples_fa": ["در کشتی‌سازی کار می‌کنم","در اسکله کار می‌کنم","جوشکاری دریایی انجام میدم"],
+    "samples_en": ["I work in shipyard","marine welder","dock worker"]
+  },
+
+  {
+    "code": "aerospace",
+    "name_fa": "هوانوردی / قطعات دقیق",
+    "name_en": "Aerospace / Aviation / Precision Parts",
+    "keywords_fa": [
+      "هوانوردی","قطعات هواپیما","کامپوزیت","NDT","بازرسی غیرمخرب","دقت بالا","قطعات هواپیمایی","مونتاژ قطعات"
+    ],
+    "keywords_en": [
+      "aerospace","aircraft parts","composite","ndt","non destructive testing","precision machining","aero"
+    ],
+    "samples_fa": ["در هوانوردی کار می‌کنم","بازرسی NDT انجام میدم","مونتاژ قطعات دقیق دارم"],
+    "samples_en": ["I work in aerospace","ndt inspector","precision parts assembly"]
+  },
+
+  {
+    "code": "utilities",
+    "name_fa": "تاسیسات / نگهداری ساختمان",
+    "name_en": "Utilities / Facility Maintenance / Building Services",
+    "keywords_fa": [
+      "تاسیسات","پمپ","لوله کشی","تهویه","تعمیر تجهیزات","نشت یابی","برق ساختمان","سیستم گرمایش","سیستم سرمایش"
+    ],
+    "keywords_en": [
+      "utilities","maintenance","plumbing","pump","leak detection","facility maintenance","building services"
+    ],
+    "samples_fa": ["تعمیرات تأسیسات انجام میدم","در نگهداری ساختمان کار می‌کنم"],
+    "samples_en": ["I do facility maintenance","I repair pumps"]
+  },
+
+  {
+    "code": "electrical",
+    "name_fa": "الکتریکال / برقکار",
+    "name_en": "Electrical / Electrician / Wiring",
+    "keywords_fa": [
+      "برق","ولتاژ","کابل","سیم کشی","تست ولتاژ","تابلو برق","فیوز","ترانسفورمر","سیستم توزیع","نصب برق"
+    ],
+    "keywords_en": [
+      "electrical","voltage","wiring","electrician","cable","live","panel","breaker","transformer"
+    ],
+    "samples_fa": ["برقکارم","کار با کابل و ولتاژ دارم","نصب تابلو برق انجام میدم"],
+    "samples_en": ["I'm an electrician","I work with wiring","switchboard installer"]
+  },
+
+  {
+    "code": "plumbing",
+    "name_fa": "لوله‌کشی / تأسیسات آب",
+    "name_en": "Plumbing / Pipefitting / Waterworks",
+    "keywords_fa": [
+      "لوله کشی","نشتی","شیرآلات","اتصالات","ونتی","پمپ آب","تعمیر پمپ","چاه"
+    ],
+    "keywords_en": [
+      "plumbing","pipe fitting","leak","valve","plumber","water pump","pipework"
+    ],
+    "samples_fa": ["لوله‌کش هستم","ترمیم نشتی انجام میدم","نصب شیرآلات انجام میدم"],
+    "samples_en": ["I'm a plumber","I fix leaks","pipe fitter"]
+  },
+
+  {
+    "code": "hvac",
+    "name_fa": "تهویه مطبوع / تبرید",
+    "name_en": "HVAC / Refrigeration / AC Technician",
+    "keywords_fa": [
+      "کولر","تهویه","دوچرخه","گاز مبرد","نشت گاز","کمپرسور","کندانسور","داکتینگ","تهویه صنعتی","سردخانه"
+    ],
+    "keywords_en": [
+      "hvac","refrigeration","ac","refrigerant","leak","compressor","condenser","ducting","cold room"
+    ],
+    "samples_fa": ["نصب و تعمیر HVAC انجام میدم","با مبردها کار می‌کنم","سردخانه سرویس میکنم"],
+    "samples_en": ["I install HVAC","refrigeration technician","cold storage technician"]
+  },
+
+  {
+    "code": "solar",
+    "name_fa": "نیروگاه خورشیدی / نصب پنل",
+    "name_en": "Solar / PV Installation / Renewable Energy",
+    "keywords_fa": [
+      "پنل خورشیدی","PV","اینورتر","مونوکریستال","پلی کریستال","مونتاژ پنل","نصب پنل"
+    ],
+    "keywords_en": [
+      "solar","pv","panel installation","inverter","solar installer"
+    ],
+    "samples_fa": ["نصب پنل خورشیدی انجام میدم","در نیروگاه خورشیدی کار می‌کنم"],
+    "samples_en": ["I install solar panels","solar technician"]
+  },
+
+  {
+    "code": "battery_manufacturing",
+    "name_fa": "تولید باتری / سلول لیتیومی",
+    "name_en": "Battery Manufacturing / Lithium Cell Production",
+    "keywords_fa": [
+      "باتری","لیتیوم","الکترود","الکترولیت","کوئینگ","کوتینگ","سلول","دشارژ","شارژ"
+    ],
+    "keywords_en": [
+      "battery","lithium","cell","electrode","electrolyte","battery production","cell assembly","lithium handling"
+    ],
+    "samples_fa": ["در خط تولید باتری کار می‌کنم","با لیتیم سروکار دارم"],
+    "samples_en": ["I work in battery production","lithium cell operator"]
+  },
+
+  {
+    "code": "medical_device",
+    "name_fa": "تولید تجهیزات پزشکی / دنتال لب",
+    "name_en": "Medical Device Manufacturing / Dental Lab",
+    "keywords_fa": [
+      "دستگاه پزشکی","استریل","ابزار پزشکی","دنتال لب","قالب گیری","چسب دندان","پلاک دندان"
+    ],
+    "keywords_en": [
+      "medical device","dental lab","sterile manufacturing","prosthetics","orthodontics"
+    ],
+    "samples_fa": ["در لابراتوار دندانپزشکی کار می‌کنم","دستگاه پزشکی مونتاژ می‌کنم"],
+    "samples_en": ["I work in dental lab","medical device assembler"]
+  },
+
+  {
+    "code": "jewelry",
+    "name_fa": "جواهرسازی / فلزات گران‌بها",
+    "name_en": "Jewelry Making / Precious Metals",
+    "keywords_fa": [
+      "طلا","نقره","جواهرسازی","سنگ قیمتی","ذوب طلا","سنگ‌گذاری","حکاکی دقیق"
+    ],
+    "keywords_en": [
+      "jewelry","goldsmith","gemstone","stone setting","soldering","precious metal"
+    ],
+    "samples_fa": ["جواهرسازم","سنگ‌گذاری انجام میدم","ساخت طلا انجام میدم"],
+    "samples_en": ["I make jewelry","goldsmith","stone setter"]
+  },
+
+  {
+    "code": "watchmaking",
+    "name_fa": "ساعت‌سازی / مونتاژ دقیق",
+    "name_en": "Watchmaking / Precision Assembly",
+    "keywords_fa": [
+      "ساعت سازی","پیچ ریز","مونتاژ میکرو","قطعات میکرو","سازنده ساعت"
+    ],
+    "keywords_en": [
+      "watchmaking","precision assembly","micro parts","horology"
+    ],
+    "samples_fa": ["در ساعت‌سازی کار می‌کنم","اسمبل دقیق انجام میدم"],
+    "samples_en": ["I assemble watches","precision technician"]
+  },
+
+  {
+    "code": "stone_masonry",
+    "name_fa": "سنگ‌بری / کاشی‌کاری / مرمرکاری",
+    "name_en": "Stone Masonry / Tiling / Marble Work",
+    "keywords_fa": [
+      "سنگبری","برش سنگ","کاشی","مرمر","چسب سنگ","بتن نما","کاشی کاری"
+    ],
+    "keywords_en": [
+      "stone masonry","tiling","marble cutting","tile installer"
+    ],
+    "samples_fa": ["سنگ‌برم","کاشی‌کاری انجام میدم","برش سنگ انجام میدم"],
+    "samples_en": ["I cut marble","tiler","stoneworker"]
+  },
+
+  {
+    "code": "ceramics",
+    "name_fa": "سرامیک / کاشی / لعاب",
+    "name_en": "Ceramics / Tile Production / Glazing",
+    "keywords_fa": [
+      "سرامیک","کوره","لعاب","پخت کوره","برش کاشی","سیستم لعاب"
+    ],
+    "keywords_en": [
+      "ceramics","kiln","glaze","tile production","ceramic"
+    ],
+    "samples_fa": ["در کارخانه کاشی کار می‌کنم","لعاب‌کاری انجام میدم"],
+    "samples_en": ["I work in ceramics","tile production"]
+  },
+
+  {
+    "code": "furniture",
+    "name_fa": "تولید مبلمان / روکش و رویه",
+    "name_en": "Furniture Manufacturing / Upholstery",
+    "keywords_fa": [
+      "مبلمان","روکش","پارچه","چوب","فریم مبلمان","نوار کشی","فوم برش"
+    ],
+    "keywords_en": [
+      "furniture","upholstery","varnish","foam cutting","frame"
+    ],
+    "samples_fa": ["در تولید مبلمان کار می‌کنم","روکش‌کاری انجام میدم"],
+    "samples_en": ["I make furniture","upholsterer"]
+  },
+
+  {
+    "code": "assembly",
+    "name_fa": "مونتاژ / خط تولید / اسمبل",
+    "name_en": "Assembly / Production Line / Parts Assembly",
+    "keywords_fa": [
+      "مونتاژ","خط تولید","پیچ","جعبه بندی","تست","کیورینگ","استیشن مونتاژ"
+    ],
+    "keywords_en": [
+      "assembly","production line","screws","fastening","testing","assembly worker"
+    ],
+    "samples_fa": ["کارگر خط تولیدم","مونتاژ قطعات انجام میدم","اسمبل قطعات دارم"],
+    "samples_en": ["assembly line worker","I assemble parts","production operator"]
+  },
+
+  {
+    "code": "repair_services",
+    "name_fa": "تعمیرات / خدمات فنی",
+    "name_en": "Repair / Maintenance / Technical Services",
+    "keywords_fa": [
+      "تعمیرات","سرویس","عیب یابی","اپراتور فنی","فیکسری","اسپیرابیلیتی"
+    ],
+    "keywords_en": [
+      "repair","service","maintenance","diagnostics","handyman","technician"
+    ],
+    "samples_fa": ["تعمیرکارم","خدمات فنی انجام میدم","عیب‌یابی می‌کنم"],
+    "samples_en": ["I do repairs","maintenance tech","handyman"]
+  },
+
+  {
+    "code": "sanitation",
+    "name_fa": "پاکسازی صنعتی / ضدعفونی / نظافت",
+    "name_en": "Sanitation / Industrial Cleaning / Disinfection",
+    "keywords_fa": [
+      "ضدعفونی","پاکسازی صنعتی","بخارشو","شستشو","اسپری ضدعفونی","مواد شیمیایی پاک کننده","حلال پاک‌کن"
+    ],
+    "keywords_en": [
+      "sanitation","cleaning","disinfection","steam cleaning","industrial cleaning","cleaner"
+    ],
+    "samples_fa": ["در پاکسازی صنعتی کار می‌کنم","ضدعفونی انجام میدم","شستشو صنعتی انجام میدم"],
+    "samples_en": ["I do industrial cleaning","sanitation worker","disinfection operator"]
+  },
+
+  {
+    "code": "print_finishing",
+    "name_fa": "صفحه‌آرایی / پس‌پردازش چاپ",
+    "name_en": "Print Finishing / Post Processing",
+    "keywords_fa": [
+      "لمینت","برش","جعبه‌سازی","یووی","کوره یووی","گیره برش"
+    ],
+    "keywords_en": [
+      "lamination","cutting","box making","uv curing","post processing"
+    ],
+    "samples_fa": ["در پس‌تولید چاپ کار می‌کنم","لمینت انجام میدم"],
+    "samples_en": ["I do print finishing","lamination operator"]
+  },
+
+  {
+    "code": "research_rnd",
+    "name_fa": "تحقیق و توسعه / پژوهشگاه",
+    "name_en": "Research & Development / Lab R&D",
+    "keywords_fa": [
+      "تحقیق","پروتوتایپ","R&D","نمونه","پروتکل تست","آزمایش تحقیقاتی"
+    ],
+    "keywords_en": [
+      "research","rnd","prototype","lab work","experimentation"
+    ],
+    "samples_fa": ["در واحد R&D کار می‌کنم","نمونه سازی انجام میدم"],
+    "samples_en": ["I work in R&D","prototype testing"]
+  },
+
+  {
+    "code": "security",
+    "name_fa": "نگهبانی / امنیت سایت / کنترل تردد",
+    "name_en": "Security / Guard / Access Control",
+    "keywords_fa": [
+      "نگهبان","کنترل تردد","بازرسی درب","گشت","پاسگاه"
+    ],
+    "keywords_en": [
+      "security","guard","access control","checkpoint","patrol"
+    ],
+    "samples_fa": ["نگهبان هستم","کنترل تردد انجام میدم","پاسگاه دارم"],
+    "samples_en": ["I'm a security guard","access control operator"]
+  },
+
+  {
+    "code": "telecom",
+    "name_fa": "مخابرات / کابل کشی / نصب آنتن",
+    "name_en": "Telecom / Network Cabling / Antenna Installation",
+    "keywords_fa": [
+      "آنتن","کابل شبکه","فیبر","splicing","اکتیو شبکه","نصب دکل","برش کابل"
+    ],
+    "keywords_en": [
+      "telecom","antenna","fiber","cabling","network installation","tower"
+    ],
+    "samples_fa": ["کابل کش شبکه انجام میدم","نصب آنتن انجام میدم","فیبر می‌زنم"],
+    "samples_en": ["I install network cables","I install antennas","I splice fiber"]
+  },
+
+  {
+    "code": "photovoltaic",
+    "name_fa": "فتوولتائیک / نصب پنل",
+    "name_en": "Photovoltaic / PV Installation",
+    "keywords_fa": [
+      "پنل خورشیدی","اینورتر","PV","مونتاژ پنل","کرکره"
+    ],
+    "keywords_en": [
+      "pv","solar panel","inverter","panel mounting","solar installer"
+    ],
+    "samples_fa": ["پنل خورشیدی نصب می‌کنم","سرویس نیروگاه خورشیدی انجام میدم"],
+    "samples_en": ["I install solar panels","solar technician"]
+  },
+
+  {
+    "code": "battery_handling",
+    "name_fa": "کار با باتری / نگهداری باتری",
+    "name_en": "Battery Handling / Maintenance",
+    "keywords_fa": [
+      "باتری","لیتیوم","اسید باتری","شارژ","دشارژ","باتری صنعتی"
+    ],
+    "keywords_en": [
+      "battery","lithium battery","acid battery","charging","discharging"
+    ],
+    "samples_fa": ["شارژ باتری انجام میدم","با باتری‌های صنعتی کار می‌کنم"],
+    "samples_en": ["I handle batteries","battery technician"]
+  },
+
+  {
+    "code": "audiovisual",
+    "name_fa": "صوت و تصویر / رویداد / اجرای صحنه",
+    "name_en": "Audiovisual / Stage / Event Tech",
+    "keywords_fa": [
+      "نورپردازی","صوت","استیج","کابل صدا","پروژکتور","اجرای زنده","باند","امپ"
+    ],
+    "keywords_en": [
+      "audio","lighting","stage","event tech","sound engineering","live events"
+    ],
+    "samples_fa": ["در اجراهای زنده کار می‌کنم","تجهیزات صوتی و نوری نصب می‌کنم"],
+    "samples_en": ["I do stage lighting","sound tech","live event technician"]
+  },
+
+  {
+    "code": "optics",
+    "name_fa": "اپتیک / لنز / مونتاژ دقیق",
+    "name_en": "Optics / Lens Manufacturing / Optical Assembly",
+    "keywords_fa": [
+      "لنز","عدسی","اپتیک","مونتاژ اپتیک","کالیبراسیون لنز","تمیزخانه"
+    ],
+    "keywords_en": [
+      "optics","lens","assembly","calibration","precision optics"
+    ],
+    "samples_fa": ["در اپتیک کار می‌کنم","لنز مونتاژ می‌کنم"],
+    "samples_en": ["I assemble lenses","optical technician"]
+  },
+
+  {
+    "code": "toy_manufacturing",
+    "name_fa": "تولید اسباب‌بازی / پلاستیک / تزریق",
+    "name_en": "Toy Manufacturing / Plastics / Injection Molding",
+    "keywords_fa": [
+      "تزریق پلاستیک","قالب تزریق","پلاستیک","مولد قالب","رنگ پلاستیک"
+    ],
+    "keywords_en": [
+      "injection molding","plastic","molding","toy production","plastic parts"
+    ],
+    "samples_fa": ["تزریق پلاستیک انجام میدم","در کارخانه پلاستیک کار می‌کنم"],
+    "samples_en": ["I work in injection molding","plastic operator"]
+  }
+]

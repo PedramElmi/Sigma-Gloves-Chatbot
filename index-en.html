@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sigma Gloves Assistant | EN</title>
+  <!-- Fonts + External CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/sigma.css" />
+</head>
+<body>
+  <!-- Language switch -->
+  <a class="lang-toggle" href="index-fa.html" aria-label="تغییر به فارسی">FA</a>
+
+  <header class="header">
+    <img src="assets/sigma-logo.png" alt="Sigma Gloves" class="logo" />
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <p id="welcome">
+        Hi! 👋 I'm Sigma's glove selection assistant. I’ll ask a few quick questions and suggest the best matches.
+      </p>
+      <div class="cta">
+        <button class="btn" id="startBtn">Start Chat</button>
+        <button class="btn btn--ghost" id="resetBtn" style="display:none">Restart</button>
+      </div>
+    </section>
+
+    <!-- Steps -->
+    <section class="card">
+      <h3>What industry do you work in?</h3>
+      <div id="q-industry" class="chips"></div>
+    </section>
+
+    <section class="card">
+      <h3>What's the main workplace hazard?</h3>
+      <div id="q-hazard" class="chips"></div>
+    </section>
+
+    <section class="card">
+      <h3>What's your environment like?</h3>
+      <div id="q-env" class="chips"></div>
+    </section>
+
+    <section class="card">
+      <h3>What matters most to you?</h3>
+      <div id="q-pref" class="chips"></div>
+    </section>
+
+    <!-- Results -->
+    <section class="card">
+      <h3>Best Matches for You 👇</h3>
+      <div id="results" class="results"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <strong>Disclaimer</strong> — These recommendations are general and based on EN standards and current Sigma products.
+    Please review real workplace conditions and the product datasheet before purchase.
+  </footer>
+
+  <script>
+    // --- UI dictionary (EN)
+    const DICT = {
+      industries: ['Metalwork','Construction','Warehouse/Logistics','Oil & Gas','Chemical','General'],
+      hazards: ['Cut','Puncture','Heat','Chemicals','Cold','Vibration','Oil/Slippery'],
+      envs: ['Dry','Wet','Oily','Cold'],
+      prefs: ['Dexterity/Soft feel','Durability/Protection'],
+      view: 'View Product',
+      notFoundTitle: 'No exact model found',
+      notFoundText: 'Search with these specs or contact Sigma:',
+      fallbackSpecs: ['Nitrile foam palm','HPPE liner','EN388: 4X43E']
+    };
+
+    // --- User selections
+    const state = { industry:null, hazard:null, env:null, pref:null, catalog:[] };
+
+    // --- Render chips
+    function renderChips(id, items, key) {
+      const box = document.getElementById(id);
+      box.innerHTML = '';
+      items.forEach(txt => {
+        const b = document.createElement('button');
+        b.className = 'chip';
+        b.type = 'button';
+        b.textContent = txt;
+        b.addEventListener('click', () => {
+          [...box.children].forEach(c => c.classList.add('chip--ghost'));
+          b.classList.remove('chip--ghost');
+          state[key] = txt;
+          renderResults();
+        });
+        box.appendChild(b);
+      });
+    }
+
+    // --- Simple scoring (MVP)
+    function prioritize(arr, preferred) {
+      const set = new Set(preferred);
+      return [...new Set([...arr.filter(x => set.has(x)), ...arr.filter(x => !set.has(x))])];
+    }
+
+    function pickModels() {
+      let picks = [];
+
+      // Cut risk → HPPE set
+      if (state.hazard && state.hazard.includes('Cut')) {
+        picks.push('+921', '+911', '922');
+      }
+      // Oily → nitrile family
+      if (state.env && state.env.includes('Oily')) {
+        picks.unshift('348', '342', '344', '332', '312', '346');
+      }
+      // Wet → latex/foam
+      if (state.env && state.env.includes('Wet')) {
+        picks.push('+485', '412', '+422', '418', '432');
+      }
+      // Cold → winter
+      if (state.env && state.env.includes('Cold')) {
+        picks.push('+446', '+434');
+      }
+
+      // Preference weighting
+      if (state.pref && state.pref.includes('Dexterity')) {
+        picks = prioritize(picks, ['+485','412','418','432','+911','922']);
+      }
+      if (state.pref && state.pref.includes('Durability')) {
+        picks = prioritize(picks, ['344','332','346','348','342','+422']);
+      }
+
+      return [...new Set(picks)].slice(0, 3);
+    }
+
+    // --- Render results
+    function renderResults() {
+      const wrap = document.getElementById('results');
+      wrap.innerHTML = '';
+      const pickCodes = pickModels();
+
+      if (!pickCodes.length) {
+        const card = document.createElement('div');
+        card.className = 'rec';
+        card.innerHTML = `
+          <h4>${DICT.notFoundTitle}</h4>
+          <p>${DICT.notFoundText}</p>
+          <ul>${DICT.fallbackSpecs.map(s => `<li>${s}</li>`).join('')}</ul>
+        `;
+        wrap.appendChild(card);
+        return;
+      }
+
+      pickCodes.forEach(code => {
+        const m = state.catalog.find(x => x.code === code);
+        if (!m) return;
+
+        const card = document.createElement('div');
+        card.className = 'rec';
+        const std = m.standards?.en388 ? `EN388: ${m.standards.en388}` : 'EN388: —';
+
+        card.innerHTML = `
+          <h4>🧤 ${m.name} <span class="badge">${m.code}</span></h4>
+          <div class="std">${std}</div>
+          <div class="feat">${(m.features || []).join(', ')}</div>
+          <div class="why">${m.why || ''}</div>
+          <a class="btn" target="_blank" rel="noopener" href="${m.link}">${DICT.view}</a>
+        `;
+        wrap.appendChild(card);
+      });
+    }
+
+    // --- Boot
+    async function boot() {
+      renderChips('q-industry', DICT.industries, 'industry');
+      renderChips('q-hazard', DICT.hazards, 'hazard');
+      renderChips('q-env', DICT.envs, 'env');
+      renderChips('q-pref', DICT.prefs, 'pref');
+
+      const res = await fetch('data/en_catalog.json'); // serve via http server (not file://)
+      state.catalog = await res.json();
+
+      document.getElementById('startBtn').addEventListener('click', () => {
+        document.getElementById('resetBtn').style.display = 'inline-block';
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      });
+      document.getElementById('resetBtn').addEventListener('click', () => {
+        state.industry = state.hazard = state.env = state.pref = null;
+        document.querySelectorAll('.chip').forEach(ch => ch.classList.remove('chip--ghost'));
+        renderResults();
+      });
+
+      renderResults();
+    }
+    boot();
+  </script>
+</body>
+</html>

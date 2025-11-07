@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Glove Selection Chatbot — Sigma</title>
+
+  <!-- same font link as Persian file (fallback) -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- shared stylesheet (must match the Persian page) -->
+  <link rel="stylesheet" href="assets/sigma.css" />
+
+  <!-- optional indexer/matcher (same as Persian) -->
+  <script src="assets/intent_matcher.js" defer></script>
+  <script src="assets/industry_indexer.js" defer></script>
+  <script src="assets/product_matcher.js" defer></script>
+
+  <style>
+    /* Inline small LTR-specific overrides to mirror Persian file visually */
+    :root { --card-width: 820px; }
+    html,body { height: 100%; margin:0; background: #f7f7f8; }
+    body { font-family: "Vazirmatn", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; display:flex; flex-direction:column; min-height:100vh; }
+
+    /* header center alignment kept as in Persian */
+    .app-header .title { text-align:center; line-height:1; direction:ltr; }
+
+     /* صفحه بندی اختصاصی برای حالت کلاسیک ChatGPT-like */
+    :root { --card-width: 820px; }
+    html,body { height: 100%; margin:0; background: #f7f7f8; }
+    body { font-family: "Vazirmatn", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; display:flex; flex-direction:column; min-height:100vh; }
+
+    /* هدر ثابت بالا */
+    .app-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: 72px;
+      background: #fff;
+      border-bottom: 3px solid var(--red);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:1200;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      padding: 0 12px;
+    }
+    .app-header .inner { width: min(1120px, 96vw); display:flex; align-items:center; justify-content:center; gap:14px; }
+    .app-header img.logo { height:46px; }
+    .app-header .title { text-align:center; line-height:1; }
+    .app-header h1 { margin:0; font-size:1.05rem; font-weight:800; color:var(--black); }
+    .app-header p { margin:0; color:var(--gray); font-size:0.85rem; }
+
+    /* محل قرارگیری محتوای اصلی (زیر هدر) */
+    .main-wrap { display:flex; align-items:center; justify-content:center; flex:1; padding:96px 16px 36px; }
+
+    /* کارت چت (مرکز) */
+    .chat-card {
+      width:100%;
+      max-width: var(--card-width);
+      height: calc(78vh);
+      min-height: 520px;
+      background:#fff;
+      border-radius:12px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+      overflow: hidden;
+      display:flex;
+      flex-direction:column;
+      border:1px solid #ececec;
+    }
+
+    /* بالای کارت (compact header) */
+    .chat-card .top {
+      padding:12px 16px;
+      border-bottom:1px solid #f0f0f0;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .chat-card .top .mini-logo { width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,var(--red),var(--red-dark)); display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800; }
+
+    /* ناحیهٔ پیام‌ها: اسکرول‌پذیر */
+    #chat-container {
+      flex:1;
+      padding:18px;
+      overflow-y:auto;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      background:linear-gradient(180deg,#fff,#fbfbfb);
+    }
+
+    /* استایل حباب‌ها */
+    .msg { max-width:78%; padding:12px 14px; border-radius:12px; word-break:break-word; box-shadow: 0 6px 18px rgba(0,0,0,0.04); }
+    .msg.bot { align-self:flex-start; background:#111; color:#fff; border-bottom-left-radius:6px; }
+    .msg.user { align-self:flex-end; background:var(--red); color:#fff; border-bottom-right-radius:6px; }
+
+    /* ورودی ثابت پایین کارت */
+    .chat-input {
+      display:flex; gap:10px; align-items:center; padding:12px; border-top:1px solid #f0f0f0; background:#fff;
+    }
+    #user-input {
+      flex:1; padding:12px 14px; border-radius:10px; border:1px solid #e7e7e7; background:#fafafa; outline:none; font-size:15px;
+    }
+    #user-input:focus { box-shadow: 0 8px 24px rgba(0,0,0,0.06); border-color:var(--red); background:#fff; }
+    #send-btn { background:var(--red); color:#fff; border:none; padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer; box-shadow: 0 8px 20px rgba(227,6,19,0.14); }
+    #send-btn:disabled { opacity:0.5; cursor:not-allowed; transform:none; box-shadow:none; }
+
+    /* متن کمکی */
+    .small { font-size:13px; color:var(--gray); }
+
+    /* واکنش برای ورودی نامشخص */
+    .clarify { font-style:italic; color:var(--gray); }
+
+    /* responsive */
+    @media (max-width:720px) {
+      .app-header { height:64px; }
+      .main-wrap { padding-top:84px; padding-left:12px; padding-right:12px; }
+      .chat-card { height: calc(84vh); min-height:420px; width:100%; }
+    }
+
+    /* ========================================
+   SIGMA GLOVES — Revamped UI
+   Persian-friendly font + glossy, modern card style
+   Place this file at: assets/sigma.css
+   If you have local fonts, put them in assets/fonts/ and adjust @font-face src.
+   ======================================== */
+
+/* ====== Font loading (edit paths to your local font files if available) ====== */
+@font-face {
+  font-family: "IranSansCustom";
+  src: url("assets/fonts/IranSans-Regular.woff2") format("woff2"),
+       url("assets/fonts/IranSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IranSansCustom";
+  src: url("assets/fonts/IranSans-Bold.woff2") format("woff2"),
+       url("assets/fonts/IranSans-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: bold;
+  font-display: swap;
+}
+
+/* Fallback stack: Vazirmatn / Shabnam / Tahoma as fallback */
+:root {
+  --red: #c8102e;        /* slightly deeper brand red */
+  --red-2: #e30026;
+  --black: #0f1113;
+  --muted: #62656a;
+  --bg-soft: #f4f5f7;
+  --card: #ffffff;
+  --glass: rgba(255,255,255,0.7);
+  --chip-bg: linear-gradient(180deg,#f8eef0,#f3d7db);
+  --radius-xl: 16px;
+  --radius-lg: 12px;
+  --shadow-1: 0 6px 20px rgba(18,22,26,0.06);
+  --shadow-2: 0 18px 50px rgba(10,12,14,0.08);
+  --glow: 0 8px 30px rgba(200,31,31,0.12);
+  --max-width: 1100px;
+  --font-main: "IranSansCustom", "Vazirmatn", "Shabnam", Tahoma, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ====== Reset & base ====== */
+* { box-sizing: border-box; }
+html,body { height:100%; }
+body {
+  margin:0;
+  font-family: var(--font-main);
+  background: linear-gradient(180deg,var(--bg-soft), #f7f8fa);
+  color: var(--black);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  font-size:15px;
+}
+
+/* ====== Header (fixed) ====== */
+.app-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height:76px;
+  background: linear-gradient(180deg,#fff,#fdfdfd);
+  border-bottom: 3px solid rgba(200,31,31,0.95);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:1200;
+  box-shadow: 0 10px 36px rgba(12,14,16,0.05);
+  padding: 0 12px;
+}
+.app-header .inner {
+  width: min(var(--max-width), 96vw);
+  display:flex;
+  gap:20px;
+  align-items:center;
+  justify-content:center;
+}
+.app-header img.logo { height:48px; width:auto; display:block; }
+.app-header .title { text-align:center; }
+.app-header h1 { margin:0; font-size:1.06rem; font-weight:700; color:var(--black); }
+.app-header p { margin:0; font-size:0.88rem; color:var(--muted); }
+
+/* language toggle (top-right) */
+.lang-toggle {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index:1250;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height:38px;
+  padding:0 .9rem;
+  background: rgba(16,18,20,0.95);
+  color:#fff;
+  border-radius:8px;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  transition: transform .15s ease, background .18s ease;
+}
+.lang-toggle:hover { transform:translateY(-3px); background: var(--red); }
+
+/* ====== Page container ====== */
+.main-wrap {
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding: 110px 16px 48px; /* account for header */
+  min-height: calc(100vh - 110px);
+}
+
+/* ====== Hero / intro card (above chat) ====== */
+.hero {
+  width: min(var(--max-width), 96vw);
+  margin: 0 auto 18px;
+  background: linear-gradient(180deg, var(--red), var(--red-2));
+  color:#fff;
+  border-radius:14px;
+  padding:20px;
+  box-shadow: var(--shadow-2);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.hero .copy { max-width:70%; }
+.hero p { margin:0; font-weight:600; }
+.hero .cta { background: rgba(255,255,255,0.08); color:#fff; padding:10px 14px; border-radius:10px; font-weight:700; text-decoration:none; }
+
+/* ====== Chat form layout similar to screenshot (cards stacked) ====== */
+.stack {
+  width: min(var(--max-width), 96vw);
+  margin: 0 auto;
+  display: grid;
+  gap: 18px;
+}
+
+/* each selection card */
+.card {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-1);
+  border: 1px solid #f0f0f1;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.card h3 {
+  margin:0;
+  color:var(--red-2);
+  font-size:1.05rem;
+  font-weight:700;
+}
+
+/* chips */
+.chips { display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
+.chip {
+  background: linear-gradient(180deg,#fff,#f7f7f9);
+  border: 1px solid rgba(200,31,31,0.08);
+  color: var(--red-2);
+  padding:8px 14px;
+  border-radius: 12px;
+  cursor:pointer;
+  font-weight:700;
+  box-shadow: 0 8px 20px rgba(200,31,31,0.06);
+  transition: transform .12s ease, box-shadow .15s ease, background .15s ease;
+}
+.chip:hover { transform:translateY(-3px); box-shadow: 0 16px 36px rgba(200,31,31,0.12); background: var(--chip-bg); }
+.chip.active {
+  background: linear-gradient(180deg,var(--red),var(--red-2));
+  color:#fff;
+  box-shadow: var(--glow);
+  transform:translateY(-2px);
+}
+
+/* ====== Chat page (center card ChatGPT-like) ====== */
+.chat-card {
+  width:100%;
+  max-width:880px;
+  margin: 6px auto;
+  border-radius: 14px;
+  overflow:hidden;
+  background: linear-gradient(180deg,#ffffff,#fbfbfb);
+  box-shadow: var(--shadow-2);
+  border: 1px solid #ececec;
+}
+
+/* chat header inside card */
+.chat-card .top {
+  padding:12px 18px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  border-bottom:1px solid #f2f2f3;
+}
+.mini-logo {
+  width:44px; height:44px; border-radius:10px;
+  background: linear-gradient(135deg,var(--red),var(--red-2));
+  color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800;
+  box-shadow: 0 10px 28px rgba(200,31,31,0.08);
+}
+
+/* interactive chat area: white with scroll */
+#chat-container {
+  min-height:420px;
+  max-height:64vh;
+  overflow:auto;
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  background: linear-gradient(180deg,#fff,#fffeff);
+}
+
+/* message bubbles (soft, friendly) */
+.msg {
+  max-width:76%;
+  padding:14px 18px;
+  border-radius:14px;
+  box-shadow: 0 10px 30px rgba(18,22,26,0.04);
+  font-size:15px;
+  line-height:1.5;
+}
+.msg.bot {
+  align-self:flex-start;
+  background: linear-gradient(180deg,#2b3034,#222528); /* dark gray */
+  color:#fff;
+  border-bottom-left-radius:8px;
+}
+.msg.user {
+  align-self:flex-end;
+  background: linear-gradient(180deg,var(--red),var(--red-2));
+  color:#fff;
+  border-bottom-right-radius:8px;
+  box-shadow: 0 14px 36px rgba(200,31,31,0.14);
+}
+
+/* suggestions list */
+.suggestions { list-style:none; padding:0; margin:6px 0 0; display:grid; gap:10px; }
+.suggestions li { background: #fff; border:1px solid #f1f1f1; padding:10px 12px; border-radius:10px; box-shadow: 0 8px 22px rgba(14,16,18,0.03); }
+a.prod-link { color:var(--red); font-weight:700; text-decoration:none; }
+
+/* chat input footer */
+.chat-input {
+  display:flex;
+  gap:12px;
+  align-items:center;
+  padding:14px;
+  border-top: 1px solid #f2f2f3;
+  background: linear-gradient(180deg,#fff,#fbfbfb);
+}
+#user-input {
+  flex:1;
+  padding:12px 16px;
+  border-radius:12px;
+  border:1px solid #ececec;
+  background:#fff;
+  outline:none;
+  font-size:15px;
+  box-shadow: inset 0 6px 18px rgba(12,14,16,0.02);
+}
+#user-input::placeholder { color:#a7adb3; }
+#send-btn {
+  background: linear-gradient(180deg,var(--red),var(--red-2));
+  color:#fff;
+  padding:10px 16px;
+  border-radius:12px;
+  border:none;
+  font-weight:800;
+  box-shadow: 0 12px 34px rgba(200,31,31,0.18);
+  cursor:pointer;
+}
+
+/* footer small text */
+.footer {
+  text-align:center;
+  color:var(--muted);
+  padding:18px 12px;
+  font-size:13px;
+}
+
+/* subtle animations */
+@keyframes rise { from { transform: translateY(6px); opacity:0 } to { transform: translateY(0); opacity:1 } }
+.msg { animation: rise .28s ease both; }
+.chip { transition: transform .15s ease, box-shadow .18s ease; }
+
+/* responsive */
+@media (max-width:900px) {
+  .main-wrap { padding-top:110px; }
+  .stack { gap:14px; }
+  .chat-card { margin:12px; width:calc(100% - 24px); max-width:100%; }
+  #chat-container { max-height:58vh; padding:16px; }
+  .msg { font-size:14px; padding:12px 14px; }
+  .hero .copy { max-width:60%; }
+}
+@media (max-width:520px) {
+  .app-header .inner { justify-content:center; gap:8px; }
+  .app-header h1 { font-size:1rem; }
+  .hero { padding:14px; border-radius:12px; }
+  .chip { padding:8px 10px; font-size:14px; }
+  #user-input { font-size:14px; padding:10px 12px; }
+  #chat-container { max-height:52vh; }
+}
+
+/* ====== Chat Ribbon (inside card) ====== */
+.chat-ribbon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #c8102e 0%, #a60d22 100%);
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 3px 10px rgba(200,16,46,0.2);
+  position: relative;
+}
+
+.chat-ribbon-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chat-ribbon-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #fff;
+  color: #e30026;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.2);
+}
+
+.chat-ribbon-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.chat-ribbon-title {
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.chat-ribbon-status {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* blinking dot on right */
+.chat-ribbon-right {
+  display: flex;
+  align-items: center;
+}
+.chat-ribbon-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #00e676;
+  box-shadow: 0 0 10px #00e676;
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.6; }
+}
+/* ====== Chat Ribbon (inside card) ====== */
+.chat-ribbon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #e30026 0%, #e30026 100%);
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 3px 10px rgba(200,16,46,0.2);
+  position: relative;
+}
+
+.chat-ribbon-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chat-ribbon-logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #fff;
+  color: #e30026;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.2);
+}
+
+.chat-ribbon-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.chat-ribbon-title {
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.chat-ribbon-status {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* blinking dot on right */
+.chat-ribbon-right {
+  display: flex;
+  align-items: center;
+}
+.chat-ribbon-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #00e676;
+  box-shadow: 0 0 10px #00e676;
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.6; }
+}
+
+  </style>
+</head>
+<body>
+  <!-- language toggle (top-right) -->
+  <a class="lang-toggle" href="chat-fa.html" aria-label="Switch to Persian">FA</a>
+
+  <!-- header (identical visuals to Persian) -->
+  <header class="app-header" role="banner">
+    <div class="inner">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <img src="assets/sigma-logo.png" alt="Sigma Gloves" class="logo" />
+        <div class="title">
+          <h1>Glove Selection Chat — Sigma</h1>
+          <p>Recommend the right glove based on your job type, hazards and work environment</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- main content (mirrors Persian layout) -->
+  <main class="main-wrap" role="main">
+    <section class="chat-card" aria-label="Sigma Chat Assistant">
+      <!-- Chat Header Ribbon (Inside Chat Card) — visually same as Persian version -->
+      <div class="chat-ribbon">
+        <div class="chat-ribbon-left">
+          <div class="chat-ribbon-logo">🧤</div>
+          <div class="chat-ribbon-info">
+            <div class="chat-ribbon-title">Sigma Assistant</div>
+            <div class="chat-ribbon-status" id="chatStatus">Online ✅</div>
+          </div>
+        </div>
+        <div class="chat-ribbon-right">
+          <span class="chat-ribbon-dot"></span>
+        </div>
+      </div>
+
+      <!-- messages container -->
+      <div id="chat-container" aria-live="polite" aria-atomic="false"></div>
+
+      <!-- input form (same visual structure as Persian) -->
+      <form id="chat-form" class="chat-input" onsubmit="return false;" aria-label="Chat input form">
+        <input id="user-input" type="text" autocomplete="off" inputmode="text"
+               placeholder="Start by typing: e.g. welding, warehouse, construction..." required aria-required="true" />
+        <button id="send-btn" type="submit" aria-label="Send">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer style="text-align:center;padding:14px;color:var(--gray);font-size:13px;">
+    © Sigma Gloves — Glove selection guide. For final technical details, refer to the product datasheet.
+  </footer>
+
+  <script>
+    /* ====== Chat logic (English) — functionally mirrors the Persian file ====== */
+
+    const STEPS = [
+      { key: "industry", q: "Hi 👋 To start, tell me what you do. For example: welding, warehouse, construction, mechanic...", ph: "e.g.: welding, carpentry, warehouse..." },
+      { key: "hazard", q: "What's the main hazard in your work? (e.g.: cut, puncture, heat, chemicals, impact)", ph: "e.g.: cut, puncture, heat..." },
+      { key: "env", q: "What is the typical environment? Dry, wet, oily, or cold?", ph: "e.g.: dry, wet, oily..." },
+      { key: "pref", q: "Any preference? comfort, durability, grip, or ventilation?", ph: "e.g.: comfort, durability, anti-slip..." }
+    ];
+
+    const CLARIFY_PROMPT = "What do you mean by that? For example: cut, puncture, heat?";
+
+    let step = 0;
+    const answers = { industry:null, hazard:null, env:null, pref:null };
+
+    const chatContainer = document.getElementById('chat-container');
+    const input = document.getElementById('user-input');
+    const form = document.getElementById('chat-form');
+    const sendBtn = document.getElementById('send-btn');
+
+    // append a message bubble (keeps the same classnames so visuals stay identical)
+    function appendMessage(sender, html) {
+      const el = document.createElement('div');
+      el.className = 'msg ' + (sender === 'bot' ? 'bot' : 'user');
+      el.innerHTML = html;
+      chatContainer.appendChild(el);
+      el.scrollIntoView({behavior:'smooth', block:'end'});
+    }
+
+    function setChatStatus(state) {
+      const el = document.getElementById("chatStatus");
+      if (!el) return;
+      el.textContent = state;
+    }
+
+    // bot typing then respond (mirrors Persian timing/behavior)
+    function botSay(text, delay = 500) {
+      setChatStatus("Responding... ✍️");
+      const t = document.createElement('div');
+      t.className = 'msg bot';
+      t.innerHTML = "<span class='typing'>typing...</span>";
+      chatContainer.appendChild(t);
+      t.scrollIntoView({behavior:'smooth', block:'end'});
+      setTimeout(() => {
+        t.remove();
+        appendMessage('bot', text);
+      }, delay);
+      setTimeout(() => setChatStatus("Online ✅"), 600);
+    }
+
+    // start step 0
+    function start() {
+      step = 0;
+      botSay(STEPS[0].q, 700);
+      input.placeholder = STEPS[0].ph;
+      input.focus();
+    }
+
+    // simple XSS escape (same as Persian)
+    function esc(s){ if (s===null||s===undefined) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    // handle input and flow (mirrors Persian logic exactly)
+    async function handleSubmit(e) {
+      e && e.preventDefault();
+      const raw = (input.value || '').trim();
+      if (!raw) {
+        botSay("Please enter a short answer so I can help.");
+        return;
+      }
+
+      appendMessage('user', esc(raw));
+      input.value = '';
+      input.disabled = true; sendBtn.disabled = true;
+
+      // step 0: industry (use indexer if available)
+      if (step === 0) {
+        let best = null;
+        try { if (window.IndustryIndexer && IndustryIndexer.bestMatch) best = IndustryIndexer.bestMatch(raw); }
+        catch(e){ console.warn(e); }
+
+        if (!best || (typeof best.score === 'number' && best.score < 0.28)) {
+          botSay("I'm not sure which industry. Please reply briefly, e.g.: 'welding' or 'warehouse'.");
+          input.disabled = false; sendBtn.disabled = false; input.focus();
+          return;
+        }
+
+        answers.industry = best.code || raw;
+        botSay(`I think you work in “${esc(best.name_en||best.name_fa||best.code||raw)}” — is that correct? (yes/no)`, 600);
+        step = 100; input.disabled = false; sendBtn.disabled = false; input.focus();
+        return;
+      }
+
+      // confirm detected industry
+      if (step === 100) {
+        const low = raw.toLowerCase();
+        if (['yes','y','yeah','yep','ok','true'].includes(low)) {
+          botSay(STEPS[1].q, 420);
+          step = 1; input.placeholder = STEPS[1].ph;
+          input.disabled = false; sendBtn.disabled = false; input.focus();
+          return;
+        } else {
+          botSay("Okay — please type one or two words about your work.", 420);
+          step = 0; input.disabled = false; sendBtn.disabled = false; input.focus();
+          return;
+        }
+      }
+
+      // step 1: hazard
+      if (step === 1) {
+        answers.hazard = raw;
+        const low = raw.toLowerCase();
+        const hazardKnown = /cut|puncture|heat|hot|chemical|acid|solvent|impact|abrasion|vibration|برش|سوراخ|حرارت|مواد/i;
+        if (!hazardKnown.test(low)) {
+          botSay(CLARIFY_PROMPT, 420);
+          input.placeholder = "e.g.: cut / puncture / heat / chemicals";
+          input.disabled = false; sendBtn.disabled = false; input.focus();
+          return;
+        }
+        botSay(STEPS[2].q, 420);
+        step = 2; input.placeholder = STEPS[2].ph;
+        input.disabled = false; sendBtn.disabled = false; input.focus();
+        return;
+      }
+
+      // step 2: environment
+      if (step === 2) {
+        answers.env = raw;
+        const low = raw.toLowerCase();
+        const envKnown = /oily|wet|dry|cold|hot|outdoor|warehouse|oily|روغن|مرطوب|خشک|سرد|گرم/i;
+        if (!envKnown.test(low)) {
+          botSay("Please be a bit clearer about the environment — e.g.: oily, wet, cold, or outdoor.", 420);
+          input.placeholder = "e.g.: oily / wet / cold";
+          input.disabled = false; sendBtn.disabled = false; input.focus();
+          return;
+        }
+        botSay(STEPS[3].q, 420);
+        step = 3; input.placeholder = STEPS[3].ph;
+        input.disabled = false; sendBtn.disabled = false; input.focus();
+        return;
+      }
+
+      // step 3: preferences & recommendations
+      if (step === 3) {
+        answers.pref = raw;
+        await showRecommendations();
+        return;
+      }
+
+      // after finished: simple commands handling
+      const low = raw.toLowerCase();
+      if (low.includes('again') || low.includes('restart') || low.includes('start over')) {
+        resetConversation(); return;
+      }
+
+      botSay("Type 'again' to restart or say 'more details' if you want me to ask further questions.", 350);
+      input.disabled = false; sendBtn.disabled = false; input.focus();
+    }
+
+    // show recommendations (mirrors Persian behavior exactly)
+    async function showRecommendations() {
+      botSay("Analyzing your answers and picking the best models... please wait a few seconds.", 700);
+
+      setTimeout(() => {
+        // summary (same layout)
+        appendMessage('bot', `<div class="small"><strong>Summary of inputs</strong>
+          <ul style="margin:8px 0 0 12px;padding-left:12px;color:var(--gray);">
+            <li>Industry: ${esc(answers.industry||'')}</li>
+            <li>Hazard: ${esc(answers.hazard||'')}</li>
+            <li>Environment: ${esc(answers.env||'')}</li>
+            <li>Preference: ${esc(answers.pref||'')}</li>
+          </ul></div>`);
+
+        // ProductMatcher usage if available
+        let picks = [];
+        try {
+          if (window.ProductMatcher && ProductMatcher.pickProducts) {
+            picks = ProductMatcher.pickProducts({ hazard: answers.hazard, env: answers.env, pref: answers.pref }, { topN:6 }) || [];
+          }
+        } catch(e){ console.warn('ProductMatcher error', e); }
+
+        if (!picks || picks.length === 0) {
+          // fallback product list (same links as Persian)
+          picks = [
+            { title_en: "HPPE Cut Resistant Gloves 911", url: "https://sigmagloves.com/products/sigma-911-cut-resistant-work-gloves/" },
+            { title_en: "Foam Latex Gloves +485", url: "https://sigmagloves.com/products/sigma-485-latex-work-gloves/" },
+            { title_en: "Nitrile Work Gloves 348", url: "https://sigmagloves.com/products/sigma-986-cut-resistant-work-gloves/" }
+          ];
+        }
+
+        let html = `<p>🔎 Suggested matches:</p><ul class="suggestions">`;
+        for (const p of picks.slice(0,8)) {
+          const title = esc(p.title_en || p.title_fa || p.id || 'Model');
+          const url = esc(p.url || '#');
+          html += `<li>🔹 <a class="prod-link" href="${url}" target="_blank" rel="noopener noreferrer">${title}</a></li>`;
+        }
+        html += `</ul><p class="small" style="margin-top:8px">Type 'again' to restart or say 'more details' to refine the suggestions.</p>`;
+
+        appendMessage('bot', html);
+
+        // prepare next input
+        input.placeholder = 'Type "again" to start over';
+        input.disabled = false; sendBtn.disabled = false; input.focus();
+        step = 999;
+      }, 900);
+    }
+
+    // reset conversation (same logic)
+    function resetConversation() {
+      step = 0;
+      answers.industry = answers.hazard = answers.env = answers.pref = null;
+      input.value = '';
+      input.disabled = false; sendBtn.disabled = false;
+      botSay(STEPS[0].q, 300);
+      input.placeholder = STEPS[0].ph;
+      input.focus();
+    }
+
+    // events (same wiring)
+    form.addEventListener('submit', handleSubmit);
+    sendBtn.addEventListener('click', handleSubmit);
+    input.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSubmit(e); });
+
+    // initial start
+    document.addEventListener('DOMContentLoaded', start);
+  </script>
+</body>
+</html>

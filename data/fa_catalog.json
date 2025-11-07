@@ -1,0 +1,178 @@
+[
+  {
+    "code": "+921",
+    "name": "دستکش سیگما +921",
+    "category": "ضد برش (Cut Resistant)",
+    "standards": { "en388": "2X43", "en407": "—", "en511": "—", "note": "Cut 5 (HPPE)، برخی سطوح دقیق گزارش نشده‌اند" },
+    "materials": { "liner": "HPPE", "coating": "—" },
+    "features": ["مقاومت برش بالا (Cut 5)", "گریپ مناسب در محیط‌های روغنی/خشک"],
+    "best_for": ["فلزکاری", "برش لبه‌های تیز"],
+    "why": "چون فیبر HPPE و مقاومت برشی سطح ۵ داره، برای کار با اجسام تیز در محیط‌های روغنی عالیه.",
+    "link": "https://sigmagloves.com/products/sigma-921-cut-resistant-work-gloves/"
+  },
+  {
+    "code": "+911",
+    "name": "دستکش سیگما +911",
+    "category": "ضد برش (Cut Resistant)",
+    "standards": { "en388": "1X42", "en407": "—", "en511": "—", "note": "Cut 5 (HPPE)" },
+    "materials": { "liner": "HPPE", "coating": "—" },
+    "features": ["مقاومت برش بالا", "کنترل خوب دست"],
+    "best_for": ["کارهای دقیق فلزی", "عمومی با خطر برش"],
+    "why": "گزینه‌ای اقتصادی با مقاومت برش بالا و کنترل خوب دست؛ مناسب کارهای دقیق فلزی.",
+    "link": "https://sigmagloves.com/products/sigma-911-cut-resistant-work-gloves/"
+  },
+  {
+    "code": "922",
+    "name": "دستکش سیگما 922",
+    "category": "ضد برش (Cut Resistant)",
+    "standards": { "en388": "3X42", "en407": "—", "en511": "—", "note": "Cut 5 (HPPE)" },
+    "materials": { "liner": "HPPE", "coating": "—" },
+    "features": ["تعادل راحتی و محافظت برش"],
+    "best_for": ["وظایف سبک تا متوسط با لبه‌های تیز"],
+    "why": "تعادل خوب بین راحتی و محافظت در برابر برش برای کارهای سبک تا متوسط.",
+    "link": "https://sigmagloves.com/products/sigma-931-cut-resistant-work-gloves/"
+  },
+  {
+    "code": "412",
+    "name": "دستکش سیگما 412 (لاتکس)",
+    "category": "عمومی / ضد لغزش",
+    "standards": { "en388": "—", "en407": "—", "en511": "—" },
+    "materials": { "liner": "پلی‌استر/فلامنت", "coating": "لاتکس" },
+    "features": ["ضد لغزش", "راحتی مناسب کار عمومی"],
+    "best_for": ["عمومی", "سطوح مرطوب"],
+    "why": "پوشش لاتکس با چنگش ضدلغزش؛ مناسب کار عمومی و سطوح مرطوب.",
+    "link": "https://sigmagloves.com/products/sigma-412-latex-work-gloves/"
+  },
+  {
+    "code": "418",
+    "name": "دستکش سیگما 418 (لاتکس)",
+    "category": "عمومی / مونتاژ سبک",
+    "standards": { "en388": "—", "en407": "—", "en511": "—" },
+    "materials": { "liner": "بافت تمیز", "coating": "لاتکس" },
+    "features": ["گریپ مناسب", "نرم و خوش‌دست"],
+    "best_for": ["کار عمومی", "مونتاژ سبک"],
+    "why": "لاتکس بافت تمیز با چسبندگی خوب؛ مناسب کارهای عمومی و مونتاژ سبک.",
+    "link": "https://sigmagloves.com/products/sigma-418-latex-work-gloves/"
+  },
+  {
+    "code": "+422",
+    "name": "دستکش سیگما +422 (لاتکس)",
+    "category": "عمومی مقاوم‌تر",
+    "standards": { "en388": "—", "en407": "—", "en511": "—" },
+    "materials": { "liner": "—", "coating": "لاتکس" },
+    "features": ["استحکام کششی بالا", "ضد لغزش"],
+    "best_for": ["عمومی", "کار کمی خشن‌تر"],
+    "why": "لاتکس با استحکام کششی بالا و ضدلغزش؛ گزینهٔ عمومی مقاوم‌تر.",
+    "link": "https://sigmagloves.com/products/sigma-422-latex-work-gloves/"
+  },
+  {
+    "code": "432",
+    "name": "دستکش سیگما 432 (لاتکس)",
+    "category": "عمومی / مرطوب",
+    "standards": { "en388": "—", "en407": "—", "en511": "—" },
+    "materials": { "liner": "—", "coating": "لاتکس (پوشش بیشتر)" },
+    "features": ["دوام بالاتر", "گریپ در حالت مرطوب"],
+    "best_for": ["شرایط مرطوب و لغزنده", "عمومی"],
+    "why": "لاتکس با پوشش سراسری و دوام بالاتر؛ مناسب محیط‌های مرطوب و لغزنده.",
+    "link": "https://sigmagloves.com/products/sigma-432-latex-work-gloves/"
+  },
+  {
+    "code": "+434",
+    "name": "دستکش سیگما +434 (حوله‌ای/لاتکس)",
+    "category": "زمستانی / مرطوب",
+    "standards": { "en388": "—", "en407": "—", "en511": "—" },
+    "materials": { "liner": "آستر حوله‌ای گرم", "coating": "لاتکس" },
+    "features": ["گرم و نرم", "چنگش خوب"],
+    "best_for": ["هوای سرد", "مرطوب"],
+    "why": "آستر حوله‌ای گرم و پوشش لاتکس برای کار زمستانی با چنگش خوب.",
+    "link": "https://sigmagloves.com/products/sigma-434-latex-work-gloves/"
+  },
+  {
+    "code": "+446",
+    "name": "دستکش سیگما +446 (لاتکس شیاردار)",
+    "category": "زمستانی / مرطوب",
+    "standards": { "en388": "2142", "en407": "—", "en511": "—" },
+    "materials": { "liner": "پلی‌استر پرزدار گرم", "coating": "لاتکس شیاردار" },
+    "features": ["گرمایش دست", "گریپ عالی در خیس"],
+    "best_for": ["باغبانی", "ساختمانی", "کار در سرما/رطوبت"],
+    "why": "آستر گرم و پوشش شیاردار برای کار در سرما یا شرایط مرطوب.",
+    "link": "https://sigmagloves.com/products/sigma-446-latex-work-gloves/"
+  },
+  {
+    "code": "+485",
+    "name": "دستکش سیگما +485 (لاتکس فوم)",
+    "category": "عمومی / گریپ بالا",
+    "standards": { "en388": "2242", "en407": "—", "en511": "—" },
+    "materials": { "liner": "—", "coating": "لاتکس فوم + لایه لاتکس" },
+    "features": ["چنگش قوی", "انعطاف و تهویه خوب"],
+    "best_for": ["کار طولانی", "سطوح لغزنده"],
+    "why": "لایه‌ی فوم برای چنگش بالا و تهویه‌ی خوب، مناسب کار طولانی.",
+    "link": "https://sigmagloves.com/products/sigma-485-latex-work-gloves/"
+  },
+  {
+    "code": "348",
+    "name": "دستکش سیگما 348 (نیتریل)",
+    "category": "روغنی/شیمیایی",
+    "standards": { "en388": "—", "en407": "—", "en511": "—", "note": "مقاوم به روغن/حلال؛ برای EN374 نیاز به اطلاعات تکمیلی" },
+    "materials": { "liner": "—", "coating": "نیتریل" },
+    "features": ["مقاوم به روغن و حلال", "ضدحساسیت"],
+    "best_for": ["نفت و گاز", "مواد نفتی/حلال"],
+    "why": "پوشش نیتریل مقاوم در برابر روغن و حلال، مناسب محیط‌های صنعتی نفتی و شیمیایی.",
+    "link": "https://sigmagloves.com/products/sigma-986-cut-resistant-work-gloves/"
+  },
+  {
+    "code": "342",
+    "name": "دستکش سیگما +342 (نیتریل)",
+    "category": "روغنی/شیمیایی",
+    "standards": { "en388": "—", "en407": "—", "en511": "—" },
+    "materials": { "liner": "—", "coating": "نیتریل" },
+    "features": ["مناسب تماس با حلال‌ها", "دوام بالا"],
+    "best_for": ["محیط‌های روغنی/حلالی"],
+    "why": "نیتریل برای تماس با روغن‌ها و حلال‌ها با دوام بالا.",
+    "link": "https://sigmagloves.com/products/sigma-486-nitrile-work-gloves/"
+  },
+  {
+    "code": "344",
+    "name": "دستکش سیگما 344 (نیتریل)",
+    "category": "روغنی/خشن",
+    "standards": { "en388": "—", "en407": "—", "en511": "—" },
+    "materials": { "liner": "—", "coating": "نیتریل تقویت‌شده" },
+    "features": ["دوام و سوراخ‌نشدن بهتر", "مناسب کار خشن"],
+    "best_for": ["حلال/روغن", "کار سنگین"],
+    "why": "نیتریل با مقاومت تقویت‌شده؛ مناسب حلال‌ها و روغن در کارهای خشن.",
+    "link": "https://sigmagloves.com/products/sigma-344-nitrile-work-gloves/"
+  },
+  {
+    "code": "346",
+    "name": "دستکش سیگما 346 (نیتریل)",
+    "category": "روغنی/تقویت‌شده",
+    "standards": { "en388": "—", "en407": "—", "en511": "—" },
+    "materials": { "liner": "—", "coating": "نیتریل با تقویت سرانگشت" },
+    "features": ["دوام بالا", "گریپ در روغن", "تقویت نوک انگشت"],
+    "best_for": ["اویل & گس", "کارهای سنگین روغنی"],
+    "why": "نیتریل مقاوم با تقویت سرانگشت؛ مناسب محیط‌های روغنی و کار سنگین.",
+    "link": "https://sigmagloves.com/products/sigma-334-nitrile-work-gloves/"
+  },
+  {
+    "code": "332",
+    "name": "دستکش سیگما 332 (نیتریل)",
+    "category": "روغنی/دوام بالا",
+    "standards": { "en388": "—", "en407": "—", "en511": "—" },
+    "materials": { "liner": "—", "coating": "نیتریل (تمام‌کف)" },
+    "features": ["دوام بالا", "مقاومت سوراخ‌شدن خوب"],
+    "best_for": ["تماس با روغن/حلال", "تعمیرات/مکانیکی"],
+    "why": "نیتریل تمام‌کف برای تماس با روغن‌ها و حلال‌ها با دوام بالا.",
+    "link": "https://sigmagloves.com/products/sigma-332-nitrile-work-gloves/"
+  },
+  {
+    "code": "312",
+    "name": "دستکش سیگما 312 (نیتریل)",
+    "category": "روغنی/مکانیکی",
+    "standards": { "en388": "—", "en407": "—", "en511": "—" },
+    "materials": { "liner": "—", "coating": "نیتریل صنعتی" },
+    "features": ["مقاومت خوب در برابر سوراخ", "ضدحساسیت"],
+    "best_for": ["کار با مواد نفتی", "تعمیرات/مکانیکی"],
+    "why": "نیتریل صنعتی با مقاومت خوب در برابر سوراخ؛ مناسب کار با مواد نفتی.",
+    "link": "https://sigmagloves.com/products/sigma-312-nitrile-work-gloves/"
+  }
+]

@@ -1,0 +1,283 @@
+/* ==============================
+   Sigma Gloves Chat UI — Red | Black | White theme
+   ============================== */
+
+/* ======== Color System ======== */
+:root {
+    --red: #E30613;
+    --red-dark: #B5050F;
+    --black: #101010;
+    --gray-dark: #2B2B2B;
+    --gray: #6C6C6C;
+    --gray-light: #D8D8D8;
+    --soft: #F9F9F9;
+    --white: #FFFFFF;
+    --radius: 14px;
+    --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.12);
+    --font: "Vazirmatn", "Inter", "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+/* ======== Base ======== */
+* {
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: var(--soft);
+    color: var(--black);
+}
+
+/* ======== Language Toggle ======== */
+.lang-toggle {
+    position: fixed;
+    top: 1rem;
+    inset-inline-end: 1rem;
+    /* RTL/LTR-aware */
+    z-index: 1000;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1rem;
+    background: var(--black);
+    color: var(--white);
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: var(--shadow-md);
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.lang-toggle:hover {
+    background: var(--red);
+    transform: translateY(-2px);
+}
+
+.lang-toggle:active {
+    transform: translateY(0);
+    background: var(--red-dark);
+}
+
+/* ======== Chat Layout ======== */
+.chat-wrapper {
+    width: min(960px, 94vw);
+    margin: 4rem auto;
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--gray-light);
+}
+
+/* ======== Header ======== */
+.chat-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 22px;
+    background: var(--black);
+    color: var(--white);
+}
+
+.chat-header .logo {
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--red), var(--red-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: var(--white);
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(227, 6, 19, 0.35);
+}
+
+.chat-header .title {
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+.chat-header .subtitle {
+    color: #f2f2f2;
+    font-size: 0.88rem;
+}
+
+/* ======== Chat Container ======== */
+.chat-container {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: linear-gradient(180deg, #fff 0%, #fdfdfd 100%);
+    position: relative;
+}
+
+/* ======== Message Bubbles ======== */
+.msg {
+    display: inline-block;
+    max-width: 85%;
+    padding: 12px 16px;
+    margin: 10px 0;
+    border-radius: 12px;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    box-shadow: var(--shadow-sm);
+    animation: fadeIn 0.3s ease;
+}
+
+.msg.bot {
+    background: var(--black);
+    color: var(--white);
+    border-bottom-left-radius: 5px;
+    margin-inline-start: 0;
+}
+
+.msg.user {
+    background: var(--red);
+    color: var(--white);
+    border-bottom-right-radius: 5px;
+    margin-inline-start: auto;
+}
+
+/* subtle typing effect */
+.msg.bot em,
+.typing {
+    font-style: italic;
+    opacity: 0.85;
+}
+
+/* ======== Input Area ======== */
+.input-area {
+    display: flex;
+    gap: 10px;
+    padding: 14px;
+    border-top: 1px solid var(--gray-light);
+    background: var(--white);
+}
+
+#user-input {
+    flex: 1;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--gray-light);
+    font-size: 0.95rem;
+    background: var(--soft);
+    color: var(--black);
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+#user-input:focus {
+    border-color: var(--red);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(227, 6, 19, 0.1);
+}
+
+#send-btn {
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    padding: 0 1rem;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+    box-shadow: 0 4px 12px rgba(227, 6, 19, 0.25);
+}
+
+#send-btn:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+}
+
+#send-btn:active {
+    transform: translateY(0);
+}
+
+/* ======== Suggestions (Products) ======== */
+ul.suggestions {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0 0;
+}
+
+ul.suggestions li {
+    background: var(--soft);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin: 8px 0;
+    border: 1px solid var(--gray-light);
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+ul.suggestions li:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+a.prod-link {
+    color: var(--red);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+a.prod-link:hover {
+    text-decoration: underline;
+}
+
+/* ======== Footer ======== */
+.footer {
+    background: var(--black);
+    color: #ddd;
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 0.8rem 1rem;
+    border-top: 2px solid var(--red);
+}
+
+/* ======== Animations ======== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ======== Responsive ======== */
+@media (max-width: 720px) {
+    .chat-wrapper {
+        margin: 1rem;
+    }
+
+    .chat-header .logo {
+        width: 44px;
+        height: 44px;
+        font-size: 1rem;
+    }
+
+    .chat-header {
+        padding: 12px 16px;
+    }
+
+    #user-input {
+        font-size: 0.9rem;
+    }
+
+    .lang-toggle {
+        top: .75rem;
+        inset-inline-end: .75rem;
+    }
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "id": "911",
+    "name_en": "Sigma Cut-Resistant HPPE 911",
+    "name_fa": "دستکش ضد برش سیگما HPPE 911",
+    "url": "https://sigmagloves.com/products/sigma-911-cut-resistant-work-gloves/",
+    "materials": ["HPPE", "nitrile coating"],
+    "features_en": ["cut-resistant", "high dexterity", "EN388 certified"],
+    "features_fa": ["ضد برش", "انعطاف‌پذیری بالا", "مطابقت با EN388"],
+    "standards": {
+      "en388": {
+        "cut_level": "5+",
+        "abrasion": 1,
+        "tear": 4,
+        "puncture": 2,
+        "tdm_newton": null
+      }
+    },
+    "suitable_for": ["metalwork", "glass", "construction", "assembly"],
+    "notes_fa": "فناوری HPPE؛ مقاومت برشی سطح 5 و بالاتر (در متون شرکت ذکر شده). مناسب کار با اجسام تیز.",
+    "notes_en": "HPPE-based; advertised as cut level 5 (and noted higher in some sources). Good for sharp objects."
+  },
+  {
+    "id": "921",
+    "name_en": "Sigma Cut-Resistant HPPE 921",
+    "name_fa": "دستکش ضد برش سیگما HPPE 921",
+    "url": "https://sigmagloves.com/products/sigma-921-cut-resistant-work-gloves/",
+    "materials": ["HPPE", "nitrile coating"],
+    "features_en": ["cut-resistant", "EN388 certified"],
+    "features_fa": ["ضد برش", "مطابقت با EN388"],
+    "standards": {
+      "en388": {
+        "cut_level": "5+",
+        "abrasion": 2,
+        "tear": 4,
+        "puncture": 3,
+        "tdm_newton": null
+      }
+    },
+    "suitable_for": ["metalwork", "glass", "manufacturing"],
+    "notes_fa": "فناوری HPPE؛ مقاومت برشی سطح 5 و بالاتر؛ ساییدگی سطح 2.",
+    "notes_en": "HPPE cut-resistant; abrasion level reported as 2."
+  },
+  {
+    "id": "922",
+    "name_en": "Sigma Cut-Resistant HPPE 922",
+    "name_fa": "دستکش ضد برش سیگما HPPE 922",
+    "url": "https://sigmagloves.com/products/sigma-931-cut-resistant-work-gloves/",
+    "materials": ["HPPE", "nitrile coating"],
+    "features_en": ["cut-resistant", "EN388 certified"],
+    "features_fa": ["ضد برش", "مطابقت با EN388"],
+    "standards": {
+      "en388": {
+        "cut_level": "5+",
+        "abrasion": 3,
+        "tear": 4,
+        "puncture": 2,
+        "tdm_newton": null
+      }
+    },
+    "suitable_for": ["metalwork", "glass", "manufacturing"],
+    "notes_fa": "HPPE با پوشش مناسب؛ مقاوم در برابر سایش بیشتر نسبت به مدل 911.",
+    "notes_en": "HPPE-based; higher abrasion resistance compared to 911."
+  },
+  {
+    "id": "412",
+    "name_en": "Sigma Latex Work Gloves 412",
+    "name_fa": "دستکش کار سیگما 412 (لاتکس)",
+    "url": "https://sigmagloves.com/products/sigma-412-latex-work-gloves/",
+    "materials": ["latex", "filament yarn"],
+    "features_en": ["latex coated", "good grip", "comfortable"],
+    "features_fa": ["پوشش لاتکس", "چنگش مناسب", "راحت"],
+    "standards": {
+      "en388": {
+        "cut_level": null,
+        "abrasion": null,
+        "tear": null,
+        "puncture": null,
+        "tdm_newton": null
+      }
+    },
+    "suitable_for": ["general", "light assembly", "maintenance"],
+    "notes_fa": "بافته شده از نخ فلامنت؛ ضد لغزش و مناسب کارهای عمومی. EN388 ذکر شده اما امتیازها در منبع درج نشده.",
+    "notes_en": "Filament yarn base with latex coating; EN388 referenced by vendor but numeric scores not provided."
+  },
+  {
+    "id": "418",
+    "name_en": "Sigma Latex Work Gloves 418",
+    "name_fa": "دستکش کار سیگما 418 (لاتکس)",
+    "url": "https://sigmagloves.com/products/sigma-418-latex-work-gloves/",
+    "materials": ["latex"],
+    "features_en": ["latex coating", "durable", "good tensile strength"],
+    "features_fa": ["پوشش لاتکس", "دوام بالا", "استحکام کششی"],
+    "standards": { "en388": { "cut_level": null, "abrasion": null, "tear": null, "puncture": null, "tdm_newton": null } },
+    "suitable_for": ["general handling", "maintenance", "light chemical splash (limited)"],
+    "notes_fa": "اطلاعات عددی EN388 ذکر نشده؛ مطابق توضیحات عمومی لاتکس.",
+    "notes_en": "General latex glove; numeric EN388 values not provided in source."
+  },
+  {
+    "id": "422",
+    "name_en": "Sigma Latex Work Gloves 422",
+    "name_fa": "دستکش کار سیگما +422 (لاتکس)",
+    "url": "https://sigmagloves.com/products/sigma-422-latex-work-gloves/",
+    "materials": ["latex"],
+    "features_en": ["latex coated", "anti-slip", "durable"],
+    "features_fa": ["پوشش لاتکس", "ضد لغزش", "دوام"],
+    "standards": { "en388": { "cut_level": null, "abrasion": null, "tear": null, "puncture": null, "tdm_newton": null } },
+    "suitable_for": ["general assembly", "maintenance"],
+    "notes_fa": "مدل لاتکس با تاکید بر چسبندگی و دوام؛ نمرات مشخص EN388 در دسترس نیست.",
+    "notes_en": "Latex model focusing on grip and durability; EN388 numeric scores not listed."
+  },
+  {
+    "id": "432",
+    "name_en": "Sigma Latex Work Gloves 432",
+    "name_fa": "دستکش کار سیگما 432 (لاتکس)",
+    "url": "https://sigmagloves.com/products/sigma-432-latex-work-gloves/",
+    "materials": ["latex"],
+    "features_en": ["latex coated", "comfortable", "good grip"],
+    "features_fa": ["پوشش لاتکس", "راحتی", "چسبندگی مناسب"],
+    "standards": { "en388": { "cut_level": null, "abrasion": null, "tear": null, "puncture": null, "tdm_newton": null } },
+    "suitable_for": ["general handling", "cold handling (if towel-lined versions exist)"],
+    "notes_fa": "مدل لاتکس عمومی؛ اطلاعات عددی تکمیلی نیاز است.",
+    "notes_en": "General latex glove; supplementary numeric data needed."
+  },
+  {
+    "id": "434",
+    "name_en": "Sigma Towel-Lined Latex +434",
+    "name_fa": "دستکش کار سیگما مدل حوله‌ای +434",
+    "url": "https://sigmagloves.com/products/sigma-434-latex-work-gloves/",
+    "materials": ["latex", "fleece lining"],
+    "features_en": ["towel-lined", "warm", "latex grip"],
+    "features_fa": ["آستر پرزدار گرم", "گرم‌کننده", "پوشش لاتکس"],
+    "standards": { "en388": { "cut_level": null, "abrasion": null, "tear": null, "puncture": null, "tdm_newton": null } },
+    "suitable_for": ["cold storage", "outdoor cold work", "general winter handling"],
+    "notes_fa": "آستر پرزدار برای کار در زمستان؛ EN388 ذکر شده اما اعداد نیاز به تایید.",
+    "notes_en": "Towel-lined latex for cold conditions; numeric EN388 details not provided."
+  },
+  {
+    "id": "348",
+    "name_en": "Sigma Nitrile +348",
+    "name_fa": "دستکش صنعتی سیگما 348 (نیتریل)",
+    "url": "https://sigmagloves.com/products/sigma-986-cut-resistant-work-gloves/",
+    "materials": ["nitrile"],
+    "features_en": ["oil & acid resistant", "solvent resistant", "higher puncture resistance"],
+    "features_fa": ["مقاوم در برابر روغن و اسید", "مناسب حلال‌ها", "مقاومت در برابر سوراخ شدن"],
+    "standards": { "en388": { "cut_level": null, "abrasion": null, "tear": null, "puncture": null, "tdm_newton": null } },
+    "suitable_for": ["oil & gas", "automotive", "chemical handling (limited)"],
+    "notes_fa": "نیتریل برای محیط‌های روغنی و حلال‌دار مناسب ذکر شده.",
+    "notes_en": "Nitrile gloves noted for oil and solvent resistance; numeric EN388 values not provided."
+  },
+  {
+    "id": "485",
+    "name_en": "Sigma Foam Latex +485",
+    "name_fa": "دستکش کار ایمنی فومی +485",
+    "url": "https://sigmagloves.com/products/sigma-485-latex-work-gloves/",
+    "materials": ["latex foam", "textile liner"],
+    "features_en": ["foam coating", "high grip", "flexible", "EN388 2242 reported"],
+    "features_fa": ["روکش فومی", "چنگش قوی", "انعطاف بالا"],
+    "standards": { "en388": { "cut_level": 2, "abrasion": 2, "tear": 4, "puncture": 2, "tdm_newton": null } },
+    "suitable_for": ["general assembly", "handling wet/oily parts where grip is needed"],
+    "notes_fa": "در منبع نوشته شده: مقاومت EN388 کد 2242.",
+    "notes_en": "Vendor reports EN388 code 2242."
+  },
+  {
+    "id": "446",
+    "name_en": "Sigma Textured Latex +446",
+    "name_fa": "دستکش سیرابی (شیاردار) سیگما +446",
+    "url": "https://sigmagloves.com/products/sigma-446-latex-work-gloves/",
+    "materials": ["polyester knit", "latex textured coating"],
+    "features_en": ["textured latex grip", "long shelf-life without hardening", "towel-like interior"],
+    "features_fa": ["لاتکس شیاردار", "نگهداری طولانی بدون سفت شدن", "آستر پرزدار"],
+    "standards": { "en388": { "code_string": "2142", "cut_level": null, "abrasion": 2, "tear": 1, "puncture": 4, "tdm_newton": null } },
+    "suitable_for": ["gardening", "glass handling", "foundry (non-molten)", "general heavy handling"],
+    "notes_fa": "در متن منبع عدد EN388 «2142» ذکر شده — اینجا به‌عنوان code_string قرار داده شده.",
+    "notes_en": "Vendor-stated EN388 code '2142'."
+  },
+  {
+    "id": "342",
+    "name_en": "Sigma Nitrile 342",
+    "name_fa": "دستکش کار سیگما 342 (نیتریل)",
+    "url": "https://sigmagloves.com/products/sigma-486-nitrile-work-gloves/",
+    "materials": ["nitrile"],
+    "features_en": ["oil & acid resistant", "solvent handling capable", "chemical splash resistance (limited)"],
+    "features_fa": ["مقاوم در برابر روغن و اسید", "مناسب کار با حلال‌ها"],
+    "standards": { "en388": { "cut_level": null, "abrasion": null, "tear": null, "puncture": null, "tdm_newton": null } },
+    "suitable_for": ["chemical handling", "oil & gas", "automotive"],
+    "notes_fa": "مدل نیتریل با تاکید بر مقاومت شیمیایی و روغنی.",
+    "notes_en": "Nitrile model; vendor indicates solvent/oil resistance."
+  },
+  {
+    "id": "344",
+    "name_en": "Sigma Nitrile +344",
+    "name_fa": "دستکش کار سیگما +344 (نیتریل)",
+    "url": "https://sigmagloves.com/products/sigma-344-nitrile-work-gloves/",
+    "materials": ["nitrile"],
+    "features_en": ["oil & acid resistant", "good durability"],
+    "features_fa": ["مقاوم در برابر روغن و اسید", "دوام"],
+    "standards": { "en388": { "cut_level": null, "abrasion": null, "tear": null, "puncture": null, "tdm_newton": null } },
+    "suitable_for": ["oil handling", "automotive", "maintenance"],
+    "notes_fa": "نیتریل؛ مناسب محیط‌های روغنی و کار با حلال‌ها (اطلاعات تکمیلی EN388 لازم است).",
+    "notes_en": "Nitrile gloves for oily/solvent environments; numeric EN388 details missing."
+  },
+  {
+    "id": "332",
+    "name_en": "Sigma Nitrile 332",
+    "name_fa": "دستکش کار سیگما 332 (نیتریل)",
+    "url": "https://sigmagloves.com/products/sigma-332-nitrile-work-gloves/",
+    "materials": ["nitrile"],
+    "features_en": ["puncture resistant", "oil resistant"],
+    "features_fa": ["مقاومت سوراخ شدن بالا", "مقاوم در برابر روغن"],
+    "standards": { "en388": { "cut_level": null, "abrasion": null, "tear": null, "puncture": null, "tdm_newton": null } },
+    "suitable_for": ["oil & gas", "automotive", "warehouse"],
+    "notes_fa": "نیتریل صنعتی؛ اطلاعات دقیق EN388 باید از دیتاشیت تایید شود.",
+    "notes_en": "Industrial nitrile; request datasheet for EN388 specifics."
+  },
+  {
+    "id": "312",
+    "name_en": "Sigma Nitrile 312",
+    "name_fa": "دستکش کار سیگما 312 (نیتریل)",
+    "url": "https://sigmagloves.com/products/sigma-312-nitrile-work-gloves/",
+    "materials": ["nitrile"],
+    "features_en": ["oil & acid resistant", "tear/puncture resistant"],
+    "features_fa": ["مقاوم روغن و اسید", "مقاومت در برابر پارگی و سوراخ شدن"],
+    "standards": { "en388": { "cut_level": null, "abrasion": null, "tear": null, "puncture": null, "tdm_newton": null } },
+    "suitable_for": ["automotive", "chemical (limited)", "maintenance"],
+    "notes_fa": "مدل نیتریل عمومی؛ لازم است دیتاشیت را برای اعداد EN388 بارگذاری کنیم.",
+    "notes_en": "General nitrile glove; EN388 numeric datasheet required for precision matching."
+  },
+  {
+    "id": "346",
+    "name_en": "Sigma Nitrile 346",
+    "name_fa": "دستکش کار سیگما 346 (نیتریل)",
+    "url": "https://sigmagloves.com/products/sigma-334-nitrile-work-gloves/",
+    "materials": ["nitrile"],
+    "features_en": ["oil & acid resistant", "reinforced fingertips"],
+    "features_fa": ["مقاوم در برابر روغن و اسید", "تقویت سر انگشت"],
+    "standards": { "en388": { "cut_level": null, "abrasion": null, "tear": null, "puncture": null, "tdm_newton": null } },
+    "suitable_for": ["mechanical", "automotive", "oily environments"],
+    "notes_fa": "نیتریل با تقویت در سرانگشت برای دوام بیشتر.",
+    "notes_en": "Nitrile with reinforced fingertips for extra durability."
+  }
+]

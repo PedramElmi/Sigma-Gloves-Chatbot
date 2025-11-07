@@ -1,0 +1,463 @@
+/* ========================================
+   SIGMA GLOVES — Revamped UI
+   Persian-friendly font + glossy, modern card style
+   Place this file at: assets/sigma-style.css
+   If you have local fonts, put them in assets/fonts/ and adjust @font-face src.
+   ======================================== */
+
+/* ====== Font loading (edit paths to your local font files if available) ====== */
+@font-face {
+    font-family: "IranSansCustom";
+    src: url("assets/fonts/IranSans-Regular.woff2") format("woff2"),
+        url("assets/fonts/IranSans-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "IranSansCustom";
+    src: url("assets/fonts/IranSans-Bold.woff2") format("woff2"),
+        url("assets/fonts/IranSans-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: bold;
+    font-display: swap;
+}
+
+/* Fallback stack: Vazirmatn / Shabnam / Tahoma as fallback */
+:root {
+    --red: #c8102e;
+    /* slightly deeper brand red */
+    --red-2: #a60d22;
+    --black: #0f1113;
+    --muted: #62656a;
+    --bg-soft: #f4f5f7;
+    --card: #ffffff;
+    --glass: rgba(255, 255, 255, 0.7);
+    --chip-bg: linear-gradient(180deg, #f8eef0, #f3d7db);
+    --radius-xl: 16px;
+    --radius-lg: 12px;
+    --shadow-1: 0 6px 20px rgba(18, 22, 26, 0.06);
+    --shadow-2: 0 18px 50px rgba(10, 12, 14, 0.08);
+    --glow: 0 8px 30px rgba(200, 31, 31, 0.12);
+    --max-width: 1100px;
+    --font-main: "IranSansCustom", "Vazirmatn", "Shabnam", Tahoma, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ====== Reset & base ====== */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    background: linear-gradient(180deg, var(--bg-soft), #f7f8fa);
+    color: var(--black);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+/* ====== Header (fixed) ====== */
+.app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 76px;
+    background: linear-gradient(180deg, #fff, #fdfdfd);
+    border-bottom: 3px solid rgba(200, 31, 31, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1200;
+    box-shadow: 0 10px 36px rgba(12, 14, 16, 0.05);
+    padding: 0 12px;
+}
+
+.app-header .inner {
+    width: min(var(--max-width), 96vw);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-header img.logo {
+    height: 48px;
+    width: auto;
+    display: block;
+}
+
+.app-header .title {
+    text-align: center;
+}
+
+.app-header h1 {
+    margin: 0;
+    font-size: 1.06rem;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.app-header p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--muted);
+}
+
+/* language toggle (top-right) */
+.lang-toggle {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 1250;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    padding: 0 .9rem;
+    background: rgba(16, 18, 20, 0.95);
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transition: transform .15s ease, background .18s ease;
+}
+
+.lang-toggle:hover {
+    transform: translateY(-3px);
+    background: var(--red);
+}
+
+/* ====== Page container ====== */
+.main-wrap {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 110px 16px 48px;
+    /* account for header */
+    min-height: calc(100vh - 110px);
+}
+
+/* ====== Hero / intro card (above chat) ====== */
+.hero {
+    width: min(var(--max-width), 96vw);
+    margin: 0 auto 18px;
+    background: linear-gradient(180deg, var(--red), var(--red-2));
+    color: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: var(--shadow-2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.hero .copy {
+    max-width: 70%;
+}
+
+.hero p {
+    margin: 0;
+    font-weight: 600;
+}
+
+.hero .cta {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* ====== Chat form layout similar to screenshot (cards stacked) ====== */
+.stack {
+    width: min(var(--max-width), 96vw);
+    margin: 0 auto;
+    display: grid;
+    gap: 18px;
+}
+
+/* each selection card */
+.card {
+    background: var(--card);
+    border-radius: var(--radius-lg);
+    padding: 18px;
+    box-shadow: var(--shadow-1);
+    border: 1px solid #f0f0f1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card h3 {
+    margin: 0;
+    color: var(--red-2);
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+/* chips */
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.chip {
+    background: linear-gradient(180deg, #fff, #f7f7f9);
+    border: 1px solid rgba(200, 31, 31, 0.08);
+    color: var(--red-2);
+    padding: 8px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(200, 31, 31, 0.06);
+    transition: transform .12s ease, box-shadow .15s ease, background .15s ease;
+}
+
+.chip:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 36px rgba(200, 31, 31, 0.12);
+    background: var(--chip-bg);
+}
+
+.chip.active {
+    background: linear-gradient(180deg, var(--red), var(--red-2));
+    color: #fff;
+    box-shadow: var(--glow);
+    transform: translateY(-2px);
+}
+
+/* ====== Chat page (center card ChatGPT-like) ====== */
+.chat-card {
+    width: 100%;
+    max-width: 880px;
+    margin: 6px auto;
+    border-radius: 14px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #ffffff, #fbfbfb);
+    box-shadow: var(--shadow-2);
+    border: 1px solid #ececec;
+}
+
+/* chat header inside card */
+.chat-card .top {
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #f2f2f3;
+}
+
+.mini-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--red), var(--red-2));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    box-shadow: 0 10px 28px rgba(200, 31, 31, 0.08);
+}
+
+/* interactive chat area: white with scroll */
+#chat-container {
+    min-height: 420px;
+    max-height: 64vh;
+    overflow: auto;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background: linear-gradient(180deg, #fff, #fffeff);
+}
+
+/* message bubbles (soft, friendly) */
+.msg {
+    max-width: 76%;
+    padding: 14px 18px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(18, 22, 26, 0.04);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.msg.bot {
+    align-self: flex-start;
+    background: linear-gradient(180deg, #2b3034, #222528);
+    /* dark gray */
+    color: #fff;
+    border-bottom-left-radius: 8px;
+}
+
+.msg.user {
+    align-self: flex-end;
+    background: linear-gradient(180deg, var(--red), var(--red-2));
+    color: #fff;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0 14px 36px rgba(200, 31, 31, 0.14);
+}
+
+/* suggestions list */
+.suggestions {
+    list-style: none;
+    padding: 0;
+    margin: 6px 0 0;
+    display: grid;
+    gap: 10px;
+}
+
+.suggestions li {
+    background: #fff;
+    border: 1px solid #f1f1f1;
+    padding: 10px 12px;
+    border-radius: 10px;
+    box-shadow: 0 8px 22px rgba(14, 16, 18, 0.03);
+}
+
+a.prod-link {
+    color: var(--red);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* chat input footer */
+.chat-input {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 14px;
+    border-top: 1px solid #f2f2f3;
+    background: linear-gradient(180deg, #fff, #fbfbfb);
+}
+
+#user-input {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid #ececec;
+    background: #fff;
+    outline: none;
+    font-size: 15px;
+    box-shadow: inset 0 6px 18px rgba(12, 14, 16, 0.02);
+}
+
+#user-input::placeholder {
+    color: #a7adb3;
+}
+
+#send-btn {
+    background: linear-gradient(180deg, var(--red), var(--red-2));
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 800;
+    box-shadow: 0 12px 34px rgba(200, 31, 31, 0.18);
+    cursor: pointer;
+}
+
+/* footer small text */
+.footer {
+    text-align: center;
+    color: var(--muted);
+    padding: 18px 12px;
+    font-size: 13px;
+}
+
+/* subtle animations */
+@keyframes rise {
+    from {
+        transform: translateY(6px);
+        opacity: 0
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1
+    }
+}
+
+.msg {
+    animation: rise .28s ease both;
+}
+
+.chip {
+    transition: transform .15s ease, box-shadow .18s ease;
+}
+
+/* responsive */
+@media (max-width:900px) {
+    .main-wrap {
+        padding-top: 110px;
+    }
+
+    .stack {
+        gap: 14px;
+    }
+
+    .chat-card {
+        margin: 12px;
+        width: calc(100% - 24px);
+        max-width: 100%;
+    }
+
+    #chat-container {
+        max-height: 58vh;
+        padding: 16px;
+    }
+
+    .msg {
+        font-size: 14px;
+        padding: 12px 14px;
+    }
+
+    .hero .copy {
+        max-width: 60%;
+    }
+}
+
+@media (max-width:520px) {
+    .app-header .inner {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .app-header h1 {
+        font-size: 1rem;
+    }
+
+    .hero {
+        padding: 14px;
+        border-radius: 12px;
+    }
+
+    .chip {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    #user-input {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    #chat-container {
+        max-height: 52vh;
+    }
+}

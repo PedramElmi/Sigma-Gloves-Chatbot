@@ -1,0 +1,178 @@
+[
+  {
+    "code": "+921",
+    "name": "Sigma +921",
+    "category": "Cut Resistant",
+    "standards": { "en388": "2X43", "en407": "—", "en511": "—", "note": "Cut 5 (HPPE), some exact sub-scores not provided" },
+    "materials": { "liner": "HPPE", "coating": "—" },
+    "features": ["High cut resistance (Cut 5)", "Good grip in oily/dry environments"],
+    "best_for": ["Metalwork", "Sharp edge handling"],
+    "why": "Made with HPPE fiber and Cut Level 5, ideal for handling sharp materials in oily environments.",
+    "link": "https://sigmagloves.com/products/sigma-921-cut-resistant-work-gloves/"
+  },
+  {
+    "code": "+911",
+    "name": "Sigma +911",
+    "category": "Cut Resistant",
+    "standards": { "en388": "1X42", "en407": "—", "en511": "—", "note": "Cut 5 (HPPE)" },
+    "materials": { "liner": "HPPE", "coating": "—" },
+    "features": ["Strong cut protection", "Good dexterity"],
+    "best_for": ["Fine metalwork", "General tasks with cut risk"],
+    "why": "Cost-efficient glove with strong cut protection and good dexterity for fine metalwork.",
+    "link": "https://sigmagloves.com/products/sigma-911-cut-resistant-work-gloves/"
+  },
+  {
+    "code": "922",
+    "name": "Sigma 922",
+    "category": "Cut Resistant",
+    "standards": { "en388": "3X42", "en407": "—", "en511": "—", "note": "Cut 5 (HPPE)" },
+    "materials": { "liner": "HPPE", "coating": "—" },
+    "features": ["Balanced comfort and cut protection"],
+    "best_for": ["Light-to-medium duties with sharp edges"],
+    "why": "Balanced comfort and cut protection for light-to-medium duties.",
+    "link": "https://sigmagloves.com/products/sigma-931-cut-resistant-work-gloves/"
+  },
+  {
+    "code": "412",
+    "name": "Sigma 412 (Latex)",
+    "category": "General / Anti-slip",
+    "standards": { "en388": "—", "en407": "—", "en511": "—" },
+    "materials": { "liner": "Polyester/Filament", "coating": "Latex" },
+    "features": ["Anti-slip", "Comfortable for general work"],
+    "best_for": ["General tasks", "Wet surfaces"],
+    "why": "Latex coating with anti-slip grip; great for general tasks and wet surfaces.",
+    "link": "https://sigmagloves.com/products/sigma-412-latex-work-gloves/"
+  },
+  {
+    "code": "418",
+    "name": "Sigma 418 (Latex)",
+    "category": "General / Light Assembly",
+    "standards": { "en388": "—", "en407": "—", "en511": "—" },
+    "materials": { "liner": "Clean knit", "coating": "Latex" },
+    "features": ["Solid grip", "Soft and comfortable"],
+    "best_for": ["General work", "Light assembly"],
+    "why": "Clean latex knit with solid grip; suited for general work and light assembly.",
+    "link": "https://sigmagloves.com/products/sigma-418-latex-work-gloves/"
+  },
+  {
+    "code": "+422",
+    "name": "Sigma +422 (Latex)",
+    "category": "General (Reinforced)",
+    "standards": { "en388": "—", "en407": "—", "en511": "—" },
+    "materials": { "liner": "—", "coating": "Latex" },
+    "features": ["High tensile strength", "Anti-slip"],
+    "best_for": ["General work", "Slightly heavier tasks"],
+    "why": "Latex with higher tensile strength and anti-slip; a more robust general-purpose option.",
+    "link": "https://sigmagloves.com/products/sigma-422-latex-work-gloves/"
+  },
+  {
+    "code": "432",
+    "name": "Sigma 432 (Latex)",
+    "category": "General / Wet Conditions",
+    "standards": { "en388": "—", "en407": "—", "en511": "—" },
+    "materials": { "liner": "—", "coating": "Latex (wider coverage)" },
+    "features": ["Higher durability", "Grip in wet/slippery conditions"],
+    "best_for": ["Wet & slippery conditions", "General tasks"],
+    "why": "Latex with fuller coverage and higher durability; good for wet and slippery conditions.",
+    "link": "https://sigmagloves.com/products/sigma-432-latex-work-gloves/"
+  },
+  {
+    "code": "+434",
+    "name": "Sigma +434 (Terry/Latex)",
+    "category": "Winter / Wet",
+    "standards": { "en388": "—", "en407": "—", "en511": "—" },
+    "materials": { "liner": "Warm terry liner", "coating": "Latex" },
+    "features": ["Warm & soft", "Good grip"],
+    "best_for": ["Cold weather", "Wet conditions"],
+    "why": "Warm terry liner with latex coating for winter use and solid grip.",
+    "link": "https://sigmagloves.com/products/sigma-434-latex-work-gloves/"
+  },
+  {
+    "code": "+446",
+    "name": "Sigma +446 (Textured Latex)",
+    "category": "Winter / Wet",
+    "standards": { "en388": "2142", "en407": "—", "en511": "—" },
+    "materials": { "liner": "Fleeced warm polyester", "coating": "Textured latex" },
+    "features": ["Hand warmth", "Excellent grip when wet"],
+    "best_for": ["Gardening", "Construction", "Cold/wet work"],
+    "why": "Warm liner and textured latex grip for cold or wet conditions.",
+    "link": "https://sigmagloves.com/products/sigma-446-latex-work-gloves/"
+  },
+  {
+    "code": "+485",
+    "name": "Sigma +485 (Latex Foam)",
+    "category": "General / High Grip",
+    "standards": { "en388": "2242", "en407": "—", "en511": "—" },
+    "materials": { "liner": "—", "coating": "Latex foam + latex layer" },
+    "features": ["Strong grip", "Flexibility & breathability"],
+    "best_for": ["Long shifts", "Slippery surfaces"],
+    "why": "Foam coating provides excellent grip and breathability for long use.",
+    "link": "https://sigmagloves.com/products/sigma-485-latex-work-gloves/"
+  },
+  {
+    "code": "348",
+    "name": "Sigma 348 (Nitrile)",
+    "category": "Oily/Chemical",
+    "standards": { "en388": "—", "en407": "—", "en511": "—", "note": "Oil/solvent resistant; EN374 details may be needed" },
+    "materials": { "liner": "—", "coating": "Nitrile" },
+    "features": ["Oil & solvent resistance", "Hypoallergenic"],
+    "best_for": ["Oil & Gas", "Petroleum/solvent handling"],
+    "why": "Nitrile-coated for oil and chemical resistance, ideal for petrochemical environments.",
+    "link": "https://sigmagloves.com/products/sigma-986-cut-resistant-work-gloves/"
+  },
+  {
+    "code": "342",
+    "name": "Sigma +342 (Nitrile)",
+    "category": "Oily/Chemical",
+    "standards": { "en388": "—", "en407": "—", "en511": "—" },
+    "materials": { "liner": "—", "coating": "Nitrile" },
+    "features": ["Suitable for solvents", "High durability"],
+    "best_for": ["Oily/solvent environments"],
+    "why": "Nitrile for oils and solvents with high durability.",
+    "link": "https://sigmagloves.com/products/sigma-486-nitrile-work-gloves/"
+  },
+  {
+    "code": "344",
+    "name": "Sigma 344 (Nitrile)",
+    "category": "Oily/Heavy-duty",
+    "standards": { "en388": "—", "en407": "—", "en511": "—" },
+    "materials": { "liner": "—", "coating": "Reinforced nitrile" },
+    "features": ["Better durability & puncture resistance", "Suited for heavy tasks"],
+    "best_for": ["Solvents/oil", "Heavy-duty work"],
+    "why": "Reinforced nitrile; suitable for solvents and oils in heavy-duty work.",
+    "link": "https://sigmagloves.com/products/sigma-344-nitrile-work-gloves/"
+  },
+  {
+    "code": "346",
+    "name": "Sigma 346 (Nitrile)",
+    "category": "Oily/Reinforced",
+    "standards": { "en388": "—", "en407": "—", "en511": "—" },
+    "materials": { "liner": "—", "coating": "Nitrile with reinforced fingertips" },
+    "features": ["High durability", "Oil grip", "Reinforced fingertips"],
+    "best_for": ["Oil & Gas", "Heavy oily tasks"],
+    "why": "Durable nitrile with reinforced fingertips; ideal for oily, heavy-duty tasks.",
+    "link": "https://sigmagloves.com/products/sigma-334-nitrile-work-gloves/"
+  },
+  {
+    "code": "332",
+    "name": "Sigma 332 (Nitrile)",
+    "category": "Oily/High Durability",
+    "standards": { "en388": "—", "en407": "—", "en511": "—" },
+    "materials": { "liner": "—", "coating": "Full nitrile" },
+    "features": ["High durability", "Good puncture resistance"],
+    "best_for": ["Oil/solvent contact", "Repair/mechanical"],
+    "why": "Full nitrile for oils and solvents with high durability.",
+    "link": "https://sigmagloves.com/products/sigma-332-nitrile-work-gloves/"
+  },
+  {
+    "code": "312",
+    "name": "Sigma 312 (Nitrile)",
+    "category": "Oily/Mechanical",
+    "standards": { "en388": "—", "en407": "—", "en511": "—" },
+    "materials": { "liner": "—", "coating": "Industrial nitrile" },
+    "features": ["Good puncture resistance", "Hypoallergenic"],
+    "best_for": ["Petroleum handling", "Repair/mechanical"],
+    "why": "Industrial nitrile with good puncture resistance; suitable for oily/petro work.",
+    "link": "https://sigmagloves.com/products/sigma-312-nitrile-work-gloves/"
+  }
+]

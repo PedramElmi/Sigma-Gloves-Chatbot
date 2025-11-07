@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>راهنمای انتخاب دستکش سیگما | فارسی</title>
+  <!-- فونت و استایل خارجی -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/sigma.css" />
+</head>
+<body>
+  <!-- دکمه سوییچ (لینک به نسخه EN) -->
+  <a class="lang-toggle" href="index-en.html" aria-label="Switch to English">EN</a>
+
+  <header class="header">
+    <img src="assets/sigma-logo.png" alt="Sigma Gloves" class="logo" />
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <p id="welcome">
+        سلام! 👋 من راهنمای انتخاب دستکش‌های سیگما هستم. چند سؤال کوتاه می‌پرسم و در پایان، مناسب‌ترین مدل‌ها رو پیشنهاد می‌دم.
+      </p>
+      <div class="cta">
+        <button class="btn" id="startBtn">شروع گفت‌وگو</button>
+        <button class="btn btn--ghost" id="resetBtn" style="display:none">شروع دوباره</button>
+      </div>
+    </section>
+
+    <!-- Steps -->
+    <section class="card">
+      <h3>در چه صنعتی کار می‌کنی؟</h3>
+      <div id="q-industry" class="chips"></div>
+    </section>
+
+    <section class="card">
+      <h3>بیشترین خطر کاری در محیطت چیه؟</h3>
+      <div id="q-hazard" class="chips"></div>
+    </section>
+
+    <section class="card">
+      <h3>محیط کارت معمولاً چطوریه؟</h3>
+      <div id="q-env" class="chips"></div>
+    </section>
+
+    <section class="card">
+      <h3>چی برات مهم‌تره؟</h3>
+      <div id="q-pref" class="chips"></div>
+    </section>
+
+    <!-- Results -->
+    <section class="card">
+      <h3>پیشنهادهای مناسب برای تو 👇</h3>
+      <div id="results" class="results"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <strong>سلب مسئولیت</strong> — توصیه‌های این راهنما عمومی بوده و بر پایه استانداردهای EN
+    و داده‌های فعلی محصولات سیگما است. لطفاً پیش از خرید نهایی، شرایط واقعی کار و برگه فنی محصول را بررسی کنید.
+  </footer>
+
+  <script>
+    // --- داده‌های ثابت UI فارسی
+    const DICT = {
+      industries: ['فلزکاری','ساختمانی','انبار/لجستیک','نفت و گاز','شیمیایی','عمومی'],
+      hazards: ['برش','سوراخ','حرارت','مواد شیمیایی','سرما','ارتعاش','روغن/لغزش'],
+      envs: ['خشک','مرطوب','روغنی','سرد'],
+      prefs: ['مهارت و نرمی','دوام و محافظت بیشتر'],
+      view: 'مشاهده محصول',
+      notFoundTitle: 'مدلی با ویژگی‌های دقیق پیدا نشد',
+      notFoundText: 'این مشخصات فنی را جستجو کن یا با تیم سیگما تماس بگیر:',
+      fallbackSpecs: ['Nitrile foam palm','HPPE liner','EN388: 4X43E']
+    };
+
+    // --- وضعیت انتخاب کاربر
+    const state = { industry:null, hazard:null, env:null, pref:null, catalog:[] };
+
+    // --- رندر چیپ‌ها
+    function renderChips(id, items, key) {
+      const box = document.getElementById(id);
+      box.innerHTML = '';
+      items.forEach(txt => {
+        const b = document.createElement('button');
+        b.className = 'chip';
+        b.type = 'button';
+        b.textContent = txt;
+        b.addEventListener('click', () => {
+          [...box.children].forEach(c => c.classList.add('chip--ghost'));
+          b.classList.remove('chip--ghost');
+          state[key] = txt;
+          renderResults();
+        });
+        box.appendChild(b);
+      });
+    }
+
+    // --- امتیازدهی خیلی سبک (MVP)
+    function pickModels() {
+      let picks = [];
+
+      // خطر برش → HPPE
+      if (state.hazard && state.hazard.includes('برش')) {
+        picks.push('+921', '+911', '922');
+      }
+      // محیط روغنی → نیتریل
+      if (state.env && state.env.includes('روغنی')) {
+        picks.unshift('348', '342', '344', '332', '312', '346');
+      }
+      // مرطوب → فوم/لاتکس
+      if (state.env && state.env.includes('مرطوب')) {
+        picks.push('+485', '412', '+422', '418', '432');
+      }
+      // سرد → زمستانی
+      if (state.env && state.env.includes('سرد')) {
+        picks.push('+446', '+434');
+      }
+
+      // ترجیح مهارت → اولویت مدل‌های سبک‌تر را جلوتر بیاور
+      if (state.pref && state.pref.includes('مهارت')) {
+        picks = prioritize(picks, ['+485','412','418','432','+911','922']);
+      }
+      // ترجیح دوام → مدل‌های صنعتی/نیتریل جلوتر
+      if (state.pref && state.pref.includes('دوام')) {
+        picks = prioritize(picks, ['344','332','346','348','342','+422']);
+      }
+
+      // یکتا و محدود به 3
+      return [...new Set(picks)].slice(0, 3);
+    }
+    function prioritize(arr, preferred) {
+      const set = new Set(preferred);
+      return [...new Set([...arr.filter(x => set.has(x)), ...arr.filter(x => !set.has(x))])];
+    }
+
+    // --- رندر نتایج
+    function renderResults() {
+      const wrap = document.getElementById('results');
+      wrap.innerHTML = '';
+      const pickCodes = pickModels();
+
+      if (!pickCodes.length) {
+        const card = document.createElement('div');
+        card.className = 'rec';
+        card.innerHTML = `
+          <h4>${DICT.notFoundTitle}</h4>
+          <p>${DICT.notFoundText}</p>
+          <ul>${DICT.fallbackSpecs.map(s => `<li>${s}</li>`).join('')}</ul>
+        `;
+        wrap.appendChild(card);
+        return;
+      }
+
+      pickCodes.forEach(code => {
+        const m = state.catalog.find(x => x.code === code);
+        if (!m) return;
+
+        const card = document.createElement('div');
+        card.className = 'rec';
+        const std = m.standards?.en388 ? `EN388: ${m.standards.en388}` : 'EN388: —';
+
+        card.innerHTML = `
+          <h4>🧤 ${m.name} <span class="badge">${m.code}</span></h4>
+          <div class="std">${std}</div>
+          <div class="feat">${(m.features || []).join('، ')}</div>
+          <div class="why">${m.why || ''}</div>
+          <a class="btn" target="_blank" rel="noopener" href="${m.link}">${DICT.view}</a>
+        `;
+        wrap.appendChild(card);
+      });
+    }
+
+    // --- راه‌اندازی
+    async function boot() {
+      // چیپ‌ها
+      renderChips('q-industry', DICT.industries, 'industry');
+      renderChips('q-hazard', DICT.hazards, 'hazard');
+      renderChips('q-env', DICT.envs, 'env');
+      renderChips('q-pref', DICT.prefs, 'pref');
+
+      // بارگذاری کاتالوگ فارسی
+      const res = await fetch('data/fa_catalog.json'); // حتما صفحه را با http سرو کن (مثلاً live server)
+      state.catalog = await res.json();
+
+      document.getElementById('startBtn').addEventListener('click', () => {
+        document.getElementById('resetBtn').style.display = 'inline-block';
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      });
+      document.getElementById('resetBtn').addEventListener('click', () => {
+        state.industry = state.hazard = state.env = state.pref = null;
+        document.querySelectorAll('.chip').forEach(ch => ch.classList.remove('chip--ghost'));
+        renderResults();
+      });
+
+      renderResults();
+    }
+    boot();
+  </script>
+</body>
+</html>
